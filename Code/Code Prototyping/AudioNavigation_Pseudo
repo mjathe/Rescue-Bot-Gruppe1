@@ -1,0 +1,44 @@
+// nord = 0°
+// east = 270°
+// south = 180°
+// west = 90°
+// vervendet wird der mathematische kreis, nicht die notation in einem Kompass
+
+
+Alignment = 0° // Fahrt richtung nord
+AudioNavigation(char[]receivedAudio {1,0,0,0} )
+{
+if (receivedAudio == null)
+  {
+     return exception
+  }
+  else
+    {
+      north = receivedAudio[0]
+      east = receivedAudio[1]
+      south = receivedAudio[2]
+      west = receivedAudio[3]
+      if ( (north && south == true) || (east && west == true) || ( north && west && south && east == true))
+        {
+          return exception
+        }
+        if (north == 1 )
+        {
+         Alignment = Alignment + 0°
+        }
+        if (east == 1)
+        {
+        Alignment = Alignment + 270°
+        }
+        if (south == 1 )
+        {
+         Alignment = Alignment + 180°
+        }
+        if (west == 1)
+        {
+        Alignment = Alignment + 90°
+        }
+        return Alignment 
+    }
+
+}
