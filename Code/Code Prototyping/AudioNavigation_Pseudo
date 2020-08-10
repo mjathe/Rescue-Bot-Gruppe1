@@ -7,11 +7,11 @@ AudioNavigation( )
   char[] audioData = readAudioSensors()
   if ( personInRange() == true)
   {
-      rettung ! 
+      rettung !
   }
   else
     {
         alignmentToDrive = Alignment_Pseudo.driveAlignment(audioData)
-        engine(alignmentToDrive)
+        engine(alignmentToDrive,direction)
     }
 }
