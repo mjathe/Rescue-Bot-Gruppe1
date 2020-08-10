@@ -1,8 +1,8 @@
 // nord = 0°
-// east = 270°
+// east = 90°
 // south = 180°
-// west = 90°
-// vervendet wird der mathematische kreis, nicht die notation in einem Kompass
+// west = 270°
+// Kompass notation
 
 
 Alignment = 0° // Fahrt richtung nord
@@ -22,23 +22,40 @@ if (receivedAudio == null)
         {
           return exception
         }
-        if (north == 1 )
+        if (north == 1 && (west && east == 0) )
         {
          Alignment = Alignment + 0°
         }
-        if (east == 1)
+        if (east == 1 && (south && north == 0))
         {
-        Alignment = Alignment + 270°
+        Alignment = Alignment +90°
         }
-        if (south == 1 )
+        if (south == 1 && (east && west == 0) )
         {
          Alignment = Alignment + 180°
         }
-        if (west == 1)
+        if (west == 1 && (south && north == 0))
         {
-        Alignment = Alignment + 90°
+        Alignment = Alignment +270°
         }
-        return Alignment 
+
+        if ( north && east == 1 )
+        {
+        Alignment= Alignment + 45
+        }
+        if ( south && east == 1 )
+        {
+        Alignment= Alignment + 135
+        }
+        if ( south && west == 1 )
+        {
+        Alignment= Alignment + 225
+        }
+        if ( north && west == 1 )
+        {
+        Alignment= Alignment + 315
+        }
+        return Alignment
     }
 
 }
