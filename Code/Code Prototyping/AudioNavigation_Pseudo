@@ -1,17 +1,17 @@
- char [4] audioData // data from audio sensors
+ bool [4] audioData // data from audio sensors
 int alignmentToDrive // calculated angle from audio singnals
 
 
-AudioNavigation( )
+AudioNavigation( ) // wenn fahrzeug audio erhält und noch nicht in reichweite ist ausrichten auf schall und dahin fahren
 {
-  char[] audioData = readAudioSensors()
+  bool[] audioData = readAudioSensors() // wenn person erreicht rettung
   if ( personInRange() == true)
   {
-      rettung ! 
+      rettung !
   }
   else
     {
         alignmentToDrive = Alignment_Pseudo.driveAlignment(audioData)
-        engine(alignmentToDrive)
+        engine(alignmentToDrive,direction)
     }
 }

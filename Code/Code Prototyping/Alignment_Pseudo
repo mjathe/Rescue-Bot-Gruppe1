@@ -6,7 +6,7 @@
 
 
 Alignment = 0° // Fahrt richtung nord
-driveAlignment(char[]receivedAudio {1,0,0,0})
+driveAlignment(bool[]receivedAudio {1,0,0,0}) // erhalt des richtungsmessungs arrays // umsetzung in grad°
 if (receivedAudio == null)
   {
      return exception
@@ -21,7 +21,7 @@ if (receivedAudio == null)
         {
           return exception
         }
-        if (north == 1 && (west && east == 0) )
+        if (north == 1 && (west && east == 0) ) //"90° "- Werte
         {
          Alignment = Alignment + 0°
         }
@@ -38,7 +38,7 @@ if (receivedAudio == null)
         Alignment = Alignment +270°
         }
 
-        if ( north && east == 1 )
+        if ( north && east == 1 ) //"45°"- Werte
         {
         Alignment= Alignment + 45
         }

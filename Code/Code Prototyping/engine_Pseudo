@@ -1,37 +1,61 @@
-void motorControl( Motor1R, Motor2L )
+void motorControl( Motor1R, Motor2L ) // ansteuerung der motoren
 {
-
+if (Motor1R == 100%)
+  {
+    digitalWrite(100%)
+  }else if (Motor1R == 0% )
+    {
+      digitalWrite(0%)
+    } else if ( Motor1R = -100%)
+      {
+        digitalWrite(-100%)
+      }
+If (Motor2L == 100% )
+  {
+    digitalWrite(100%)
+  }else if (Motor2L == 0% )
+    {
+      digitalWrite(0%)
+    } else if ( Motor2L = -100%)
+      {
+        digitalWrite(-100%)
+      }
 }
-transmission(int alignmentToDrive,int direction)
+transmission(int alignmentToDrive,int direction)    // wo soll der Roboter hinfahren
 {
-if ( direction == 0) // forward == 0, backward == 1
+if ( direction == 1) // forward == 1,
 {
   switch(alignmentToDrive)
   case1 0°: motorControl(Motor1R = 100%, Motor2L = 100%)
   break;
   case2 45°: motorControl(rotation(45°))
   break;
-  case 90°: motorControl(rotation(45°))
+  case 90°: motorControl(rotation(90°))
   break;
-  case 135°: motorControl(rotation(45°))
+  case 135°: motorControl(rotation(135)°))
   break;
-  case 180°: motorControl(rotation(45°))
+  case 180°: motorControl(rotation(180°))
   break;
-  case 225°: motorControl(rotation(45°))
+  case 225°: motorControl(rotation(225°))
   break;
-  case 270°: motorControl(rotation(45°))
+  case 270°: motorControl(rotation(270°))
   break;
-  case 315°: motorControl(rotation(45°))
+  case 315°: motorControl(rotation(315°))
   break;
 }
-else if (direction == 1)
+else if (direction == 2)
   {
-    
+    motorControl(Motor1R= -100%, Motor2L= -100%)
+
   }
+  else if (direction == 0)
+    {
+      motorControl(Motor1R= 0%, Motor2L = 0%)
+    }
 
 }
 
-rotation(angle)
+rotation(angle) // umsetzung der Zeitbasierten drehung
 {
 if(angle > 180) // turn left
 {
@@ -42,7 +66,7 @@ if(angle > 180) // turn left
       }
       motorControl(Motor1R = 0%, Motor2L = 0%)
     }
-    else if(angle < 180) // turn left
+    else if(angle <= 180) // turn left
     {
       for(i = angle) / degreePerSec; i > 0; i--)
           {
