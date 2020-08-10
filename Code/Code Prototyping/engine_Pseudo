@@ -1,0 +1,55 @@
+void motorControl( Motor1R, Motor2L )
+{
+
+}
+transmission(int alignmentToDrive,int direction)
+{
+if ( direction == 0) // forward == 0, backward == 1
+{
+  switch(alignmentToDrive)
+  case1 0°: motorControl(Motor1R = 100%, Motor2L = 100%)
+  break;
+  case2 45°: motorControl(rotation(45°))
+  break;
+  case 90°: motorControl(rotation(45°))
+  break;
+  case 135°: motorControl(rotation(45°))
+  break;
+  case 180°: motorControl(rotation(45°))
+  break;
+  case 225°: motorControl(rotation(45°))
+  break;
+  case 270°: motorControl(rotation(45°))
+  break;
+  case 315°: motorControl(rotation(45°))
+  break;
+}
+else if (direction == 1)
+  {
+    
+  }
+
+}
+
+rotation(angle)
+{
+if(angle > 180) // turn left
+{
+  for(i = (360° - angle) / degreePerSec; i > 0; i--)
+      {
+      motorControl(Motor1R=100%,Motor2L=0%)
+      sleep(1000)
+      }
+      motorControl(Motor1R = 0%, Motor2L = 0%)
+    }
+    else if(angle < 180) // turn left
+    {
+      for(i = angle) / degreePerSec; i > 0; i--)
+          {
+          motorControl(Motor1R=0%,Motor2L=100%)
+          sleep(1000)
+          }
+          motorControl(Motor1R = 0%, Motor2L = 0%)
+        }
+  }
+}
