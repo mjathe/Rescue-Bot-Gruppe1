@@ -1,0 +1,60 @@
+// nord = 0°
+// east = 90°
+// south = 180°
+// west = 270°
+// Kompass notation
+
+
+Alignment = 0° // Fahrt richtung nord
+driveAlignment(char[]receivedAudio {1,0,0,0})
+if (receivedAudio == null)
+  {
+     return exception
+  }
+  else
+    {
+      north = receivedAudio[0]
+      east = receivedAudio[1]
+      south = receivedAudio[2]
+      west = receivedAudio[3]
+      if ( (north && south == true) || (east && west == true) || ( north && west && south && east == true))
+        {
+          return exception
+        }
+        if (north == 1 && (west && east == 0) )
+        {
+         Alignment = Alignment + 0°
+        }
+        if (east == 1 && (south && north == 0))
+        {
+        Alignment = Alignment +90°
+        }
+        if (south == 1 && (east && west == 0) )
+        {
+         Alignment = Alignment + 180°
+        }
+        if (west == 1 && (south && north == 0))
+        {
+        Alignment = Alignment +270°
+        }
+
+        if ( north && east == 1 )
+        {
+        Alignment= Alignment + 45
+        }
+        if ( south && east == 1 )
+        {
+        Alignment= Alignment + 135
+        }
+        if ( south && west == 1 )
+        {
+        Alignment= Alignment + 225
+        }
+        if ( north && west == 1 )
+        {
+        Alignment= Alignment + 315
+        }
+        return Alignment
+    }
+
+}
