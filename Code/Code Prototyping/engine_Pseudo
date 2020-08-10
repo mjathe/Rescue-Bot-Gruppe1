@@ -1,4 +1,4 @@
-void motorControl( Motor1R, Motor2L )
+void motorControl( Motor1R, Motor2L ) // ansteuerung der motoren
 {
 if (Motor1R == 100%)
   {
@@ -21,7 +21,7 @@ If (Motor2L == 100% )
         digitalWrite(-100%)
       }
 }
-transmission(int alignmentToDrive,int direction)
+transmission(int alignmentToDrive,int direction)    // wo soll der Roboter hinfahren
 {
 if ( direction == 1) // forward == 1,
 {
@@ -55,7 +55,7 @@ else if (direction == 2)
 
 }
 
-rotation(angle)
+rotation(angle) // umsetzung der Zeitbasierten drehung
 {
 if(angle > 180) // turn left
 {
