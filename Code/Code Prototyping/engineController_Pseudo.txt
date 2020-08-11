@@ -1,4 +1,4 @@
-void motorControl( Motor1R, Motor2L ) // ansteuerung der motoren
+void engine( Motor1R, Motor2L ) // ansteuerung der motoren
 {
 if (Motor1R == 100%)
   {
@@ -25,15 +25,15 @@ acclerator(direction)    // wo soll der Roboter hinfahren
 {
   if(direction == 0)
   {
-  motorControl(Motor1R= 0%, Motor2L = 0% ) Stop
+  engine(Motor1R= 0%, Motor2L = 0% ) Stop
   }
   else if(direction == 1)
   {
-    motorControl(Motor1R = 100%, Motor2L = 100%) // forward
+    engine(Motor1R = 100%, Motor2L = 100%) // forward
   }
   else if (direction == 2)
   {
-    motorControl(Motor1R = -100%, Motor2L -100%) //reverse
+    engine(Motor1R = -100%, Motor2L -100%) //reverse
   }
 }
 
@@ -43,19 +43,19 @@ if(angle > 180) // turn left
 {
   for(i = (360° - angle) / degreePerSec; i > 0; i--)
       {
-      motorControl(Motor1R=0%,Motor2L=100%)
+      engine(Motor1R=0%,Motor2L=100%)
       sleep(1000)
       }
-      motorControl(Motor1R = 0%, Motor2L = 0%)
+      engine(Motor1R = 0%, Motor2L = 0%)
     }
     else if(angle <= 180) // turn left
     {
       for(i = angle) / degreePerSec; i > 0; i--)
           {
-          motorControl(Motor1R=100%,Motor2L=0%)
+          engine(Motor1R=100%,Motor2L=0%)
           sleep(1000)
           }
-          motorControl(Motor1R = 0%, Motor2L = 0%)
+          engine(Motor1R = 0%, Motor2L = 0%)
         }
   }
 }

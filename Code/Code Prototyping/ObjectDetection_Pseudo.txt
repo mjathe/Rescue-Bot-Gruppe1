@@ -1,13 +1,20 @@
 ObjectDetection()
 {
-  if( checkUltrasonic() == {0,0,0,0})
+if(SensorCheck_Pseudo.checkWater() == true)
+{
+  DriveMode.startWaterMode()
+}else if( SensorCheck_Pseudo.checkWater() == false)
+{
+  DriveMode.startLandMode()
+}
+  if( SensorCheck_Pseudo.checkUltrasonic() == {0,0,0,0})
   {
     return false
   }
   else //ultrasonic==true
   {
   //objectRecognition
-   if(checkInfrared() == false )
+   if(SensorCheck_Pseudo.checkInfrared() == false )
    {  // no person detected
       if(cameraMeasurement(branches) == true)
       {
@@ -22,7 +29,7 @@ ObjectDetection()
    }
    else //infrared==true
    {
-      if (driveToPerson() == finished )
+      if (driveToPeson.driveToPerson() == finished )
       {
         rescue()
       }
