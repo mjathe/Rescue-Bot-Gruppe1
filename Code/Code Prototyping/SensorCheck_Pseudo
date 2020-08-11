@@ -18,10 +18,7 @@ checkAudio()
 //east = 1
 //south = 2
 //west = 3
-if(sensorRead(north)== true){audioData[0] = true}else{audioData[0] = false } // digitalisierung falls SensorRead == analogwert
-if(sensorRead(east)== true){audioData[1] = true}else{audioData[1] = false }
-if(sensorRead(south)== true){audioData[2] = true}else{audioData[2] = false }
-if(sensorRead(west)== true){audioData[3] = true}else{audioData[3] = false }
+if( )
 }
 
 checkWater()
