@@ -1,0 +1,32 @@
+ObjectDetection()
+{
+  if( checkUltrasonic() == {0,0,0,0})
+  {
+    return false
+  }
+  else //ultrasonic==true
+  {
+  //objectRecognition
+   if(checkInfrared() == false )
+   {  // no person detected
+      if(cameraMeasurement(branches) == true)
+      {
+        startChainsaw()
+        return false //
+      }
+      else
+      {
+        avoidObject()
+        return false
+      }
+   }
+   else //infrared==true
+   {
+      if (driveToPerson() == finished )
+      {
+        rescue()
+      }
+   }
+  }
+
+}

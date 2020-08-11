@@ -11,7 +11,7 @@ AudioThree{1,1,1,0,0,0,0,1,1} //northeast
 Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
     for ( i=0; i< 9; i++)
     {
-      audioSignals[i] = SensorRead(microfone)
+      audioSignals[i] = readSensor(microfone)
       sleep(100) // zeit zwischen den bits
     }
     for(i= 0; i<3;i++)
@@ -34,7 +34,7 @@ Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
 }
 int compass()
 {
-    int currentalignmentOnMap = readCompassSensor(comp1)
+    int currentalignmentOnMap = readSensor(compass)
     return currentalignmentOnMap
 }
 
@@ -46,6 +46,11 @@ checkWater()
 checkPerson()
 {
 
+}
+checkUltrasonic()
+{
+
+return {SensorRead(ultrasonicVL),SensorRead(ultrasonicVR),SensorRead(ultrasonicHL),SensorRead(ultrasonicHR)}
 }
 checkObstacle()
 {
