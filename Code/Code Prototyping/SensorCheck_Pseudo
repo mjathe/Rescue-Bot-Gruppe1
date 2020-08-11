@@ -1,25 +1,41 @@
-bool[] audioData[4]
+bool[] audioSignals[9]
+bool[] audiData[4]
 bool water
 bool[] obstacle[4]
 
 public bool[] readAudioSensors()
 {
-  return audioData[]
+AudioOne{1,1,1,0,0,0,0,0,1} //northwest
+AudioTwo{1,1,1,0,0,0,0,1,0}//northeast
+AudioThree{1,1,1,0,0,0,0,1,1} //northeast
+Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
+    for ( i=0; i< 9; i++)
+    {
+      audioSignals[i] = SensorRead(microfone)
+      sleep(100) // zeit zwischen den bits
+    }
+
+      if(audioSignals.subArray[0,5] == new {1,1,1,0,0,0})
+        {
+         switch(audioSignals.subArray[6,8])
+         case {001}: audioData[0]  = true
+         case {010}: audiData[1] = true
+         case {011}: audioData[2]  = true
+         case {100}: audiData[3] = true
+         return audiData
+        }
+
+        else
+        {
+         exeption"fehlerhaftes Signal"
+        }
 }
-
-
-
-
-
-
-checkAudio()
+int compass()
 {
-//north = 0
-//east = 1
-//south = 2
-//west = 3
-if( )
+    int currentalignmentOnMap = readCompassSensor(comp1)
+    return currentalignmentOnMap
 }
+
 
 checkWater()
 {

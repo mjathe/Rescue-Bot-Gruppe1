@@ -21,38 +21,20 @@ If (Motor2L == 100% )
         digitalWrite(-100%)
       }
 }
-transmission(int alignmentToDrive,int direction)    // wo soll der Roboter hinfahren
+acclerator(direction)    // wo soll der Roboter hinfahren
 {
-if ( direction == 1) // forward == 1,
-{
-  switch(alignmentToDrive)
-  case1 0°: motorControl(Motor1R = 100%, Motor2L = 100%)
-  break;
-  case2 45°: motorControl(rotation(45°))
-  break;
-  case 90°: motorControl(rotation(90°))
-  break;
-  case 135°: motorControl(rotation(135)°))
-  break;
-  case 180°: motorControl(rotation(180°))
-  break;
-  case 225°: motorControl(rotation(225°))
-  break;
-  case 270°: motorControl(rotation(270°))
-  break;
-  case 315°: motorControl(rotation(315°))
-  break;
-}
-else if (direction == 2)
+  if(direction == 0)
   {
-    motorControl(Motor1R= -100%, Motor2L= -100%)
-
+  motorControl(Motor1R= 0%, Motor2L = 0% ) Stop
   }
-  else if (direction == 0)
-    {
-      motorControl(Motor1R= 0%, Motor2L = 0%)
-    }
-
+  else if(direction == 1)
+  {
+    motorControl(Motor1R = 100%, Motor2L = 100%) // forward
+  }
+  else if (direction == 2)
+  {
+    motorControl(Motor1R = -100%, Motor2L -100%) //reverse
+  }
 }
 
 rotation(angle) // umsetzung der Zeitbasierten drehung
