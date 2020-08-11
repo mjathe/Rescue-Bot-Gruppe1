@@ -2,7 +2,7 @@ R = Border
 G = Ground
 O = Obstacle
 
-Schallquellen in 3,3 28,3 und 28,26
+Schallquellen in 3,3 28,3 und 27,26
 
 
 {
