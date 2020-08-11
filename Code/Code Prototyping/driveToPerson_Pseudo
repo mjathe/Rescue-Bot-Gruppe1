@@ -8,15 +8,16 @@ if(findObstacle(person) == true)
 else
 {
   AudioNavigation();
-  if(findObstacle(branch)== true)
+
+  if (ultrasonic == true)
+  {
+    engine.transmission(0)
+    avoidObstacle()
+  }else if(findObstacle(branch)== true)
   {
     engine.transmission(0)
     callOperator
     activateChainSaw()
-  }
-  else if (ultrasonic == true)
-  {
-  engine.transmission(0);
   }
   else
   {
