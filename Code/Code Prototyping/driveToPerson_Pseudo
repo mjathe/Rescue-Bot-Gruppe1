@@ -1,4 +1,4 @@
-driveToPerson
+AutoMode()
 {
 if(findObstacle(person) == true)
 {
@@ -23,4 +23,11 @@ else
     engine.transmission(1)
   }
 }
+}
+driveToPerson()
+{
+  while(Operator != PressStop)
+  {
+  AutoMode()
+  }
 }

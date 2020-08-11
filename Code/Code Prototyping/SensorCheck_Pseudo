@@ -14,7 +14,8 @@ Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
       audioSignals[i] = SensorRead(microfone)
       sleep(100) // zeit zwischen den bits
     }
-
+    for(i= 0; i<3;i++)
+    {
       if(audioSignals.subArray[0,5] == new {1,1,1,0,0,0})
         {
          switch(audioSignals.subArray[6,8])
@@ -22,13 +23,14 @@ Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
          case {010}: audiData[1] = true
          case {011}: audioData[2]  = true
          case {100}: audiData[3] = true
-         return audiData
         }
 
         else
         {
          exeption"fehlerhaftes Signal"
         }
+        return audiData
+      }
 }
 int compass()
 {
