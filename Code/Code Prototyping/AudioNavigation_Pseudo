@@ -1,17 +1,31 @@
- bool [4] audioData // data from audio sensors
-int alignmentToDrive // calculated angle from audio singnals
+ bool [3] audioData // data from audio sensors
+ bool[3] audioData2
 
-
-AudioNavigation( ) // wenn fahrzeug audio erhält und noch nicht in reichweite ist ausrichten auf schall und dahin fahren
+AudioNavigation(int weight) //aurichtung auf AudioStation
 {
-  bool[] audioData = readAudioSensors() // wenn person erreicht rettung
-  if ( personInRange() == true)
-  {
-      rettung !
-  }
-  else
+  audioData = readAudioSensors()
+    if(audioData == {1,0,0,0})
     {
-        alignmentToDrive = Alignment_Pseudo.driveAlignment(audioData)
-        engine(alignmentToDrive,direction)
+      Alignment.adjustalignment(0°) //nach Nturm 1 liegt in richtung norden
+    }
+    else if(audioData == {1,0,0,1} && weight <= Max)
+    {
+    Alignment.adjustalignment(90°)  // to East da richtung 4 die kürzere strecke ist ... alignmentnach osten
+    }
+    else if(audioData == {1,1,0,0})
+    {
+    Alignment.adjustalignment(90°) // to East vom turm 1 aus liegt der turm richtung osten
+    }
+    else if(audioData == {0,1,0,0})
+    {
+    Alignment.adjustalignment(90°) falls (warum auch immer) das fahrzeug eine andere ausrichtung auf der gerade zu punkt 2 unterläuft
+    }
+    elseif(audioData == {0,1,1,0})
+    {
+    Alignment.adjustalignment(180°) //to South ausrichtung auf turm 4 (hierzwischen muss irgendwo der Verletze liegen)
+    }
+    else if(audioData == {0,0,1,0})
+    {
+    Alignment.adjustalignment(180°)
     }
 }
