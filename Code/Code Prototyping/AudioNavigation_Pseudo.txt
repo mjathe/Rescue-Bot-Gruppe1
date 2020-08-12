@@ -1,14 +1,13 @@
- bool [3] audioData // data from audio sensors
- bool[3] audioData2
+ bool [4] audioData // data from audio sensors
 
-AudioNavigation(int weight) //aurichtung auf AudioStation
+AudioNavigation(int weight) //aurichtung auf AudioStation in bezug zum Nordpol
 {
-  audioData = readAudioSensors()
+  audioData = readAudioSensors() //lese Audio sensoren
     if(audioData == {1,0,0,0})
     {
-      Alignment.adjustalignment(0°) //nach Nturm 1 liegt in richtung norden
+      Alignment.adjustalignment(0°) //nach turm 1 liegt in richtung norden
     }
-    else if(audioData == {1,0,0,1} && weight <= Max)
+    else if(audioData == {1,0,0,1} && weight <= Max)    //entscheidung ob kurze strecke ü. wasser oder ü. land
     {
     Alignment.adjustalignment(90°)  // to East da richtung 4 die kürzere strecke ist ... alignmentnach osten
     }

@@ -5,10 +5,10 @@ bool[] obstacle[4]
 
 public bool[] readAudioSensors()
 {
-AudioOne{1,1,1,0,0,0,0,0,1} //northwest
-AudioTwo{1,1,1,0,0,0,0,1,0}//northeast
-AudioThree{1,1,1,0,0,0,0,1,1} //northeast
-Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
+//AudioOne{1,1,1,0,0,0,0,0,1} northwest
+//AudioTwo{1,1,1,0,0,0,0,1,0}northeast
+//AudioThree{1,1,1,0,0,0,0,1,1} northeast
+//Audiofour{1,1,1,0,0,0,1,0,0} Southeast shortway
     for ( i=0; i< 9; i++)
     {
       audioSignals[i] = readSensor(microfone)
@@ -34,8 +34,8 @@ Audiofour{1,1,1,0,0,0,1,0,0} Southeast //shortway
 }
 int compass()
 {
-    int currentalignmentOnMap = readSensor(compass)
-    return currentalignmentOnMap
+    int orientationToNorth = readSensor(compass)
+    return orientationToNorth
 }
 
 
@@ -43,10 +43,10 @@ checkWater()
 {
   water = SensorRead(water)
 }
-checkPerson()
-{
 
-}
+
+
+
 checkUltrasonic()
 {
 
