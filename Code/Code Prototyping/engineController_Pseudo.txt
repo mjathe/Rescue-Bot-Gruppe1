@@ -1,4 +1,4 @@
-void engine( Motor1R, Motor2L ) // ansteuerung der motoren
+private void engine( Motor1R, Motor2L ) // ansteuerung der motoren
 {
 if (Motor1R == 100%)
   {
@@ -21,7 +21,7 @@ If (Motor2L == 100% )
         digitalWrite(-100%)
       }
 }
-acclerator(direction)    // wo soll der Roboter hinfahren
+puplic acclerator(direction)    // vor zurück stopp
 {
   if(direction == 0)
   {
@@ -37,7 +37,7 @@ acclerator(direction)    // wo soll der Roboter hinfahren
   }
 }
 
-rotation(angle) // umsetzung der Zeitbasierten drehung
+public rotation(angle) // umsetzung der Zeitbasierten drehung
 {
 if(angle > 180) // turn left
 {
