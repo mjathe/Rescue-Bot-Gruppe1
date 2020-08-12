@@ -1,6 +1,6 @@
 AutoMode()
 {
-if(ObjectDetection == true)
+if(ObjectDetection() == true)
 {
   engine.transmission(0)
 }
