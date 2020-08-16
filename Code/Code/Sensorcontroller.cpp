@@ -72,7 +72,6 @@ public float acceleration(speed, x3, y3, z3)
 
 }
 
-public 
 
 public int checkUltrasonicsensors(ultrasonicVL, ultrasonicVR, ultrasonicHL, ultrasonicHR, 30, 29, 28, 27, 26, 25, 24, 23) 
 {
