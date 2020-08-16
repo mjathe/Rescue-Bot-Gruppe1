@@ -7,6 +7,8 @@ float x2, y2, z2;	//compass
 float x3, y3, z3;	//acceleration
 float orientationToNorth;
 float orientation;
+int ultrasonicVL, ultrasonicVR, ultrasonicHL, ultrasonicHR;
+
 
 bool[] audioSignals[9];
 bool[] audiData[4];
@@ -31,14 +33,14 @@ public bool[] readAudioSensors()
       if(audioSignals.subArray[0,5] == new {1,1,1,0,0,0})
         {
          switch(audioSignals.subArray[6,8]);
-         case {001}: audioData[0]  = true;
-        	break;
-         case {010}: audiData[1] = true;
-         	break;
-         case {011}: audioData[2]  = true;
-        	break;
-         case {100}: audiData[3] = true;
-         	break;
+         	case {001}: audioData[0]  = true;
+        		break;
+        	case {010}: audiData[1] = true;
+         		break;
+         	case {011}: audioData[2]  = true;
+        		break;
+         	case {100}: audiData[3] = true;
+         		break;
         }
 
         else
