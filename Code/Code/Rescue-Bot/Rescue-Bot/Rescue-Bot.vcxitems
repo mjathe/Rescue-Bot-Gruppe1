@@ -19,7 +19,9 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Alignment.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AudioNavigation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DriveMode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)EngineController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ObjectDetection.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Sensorcontroller.h" />
   </ItemGroup>
 </Project>
