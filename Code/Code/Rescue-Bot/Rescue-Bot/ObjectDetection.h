@@ -37,7 +37,7 @@ public:
 				break;
 			case 'p': recognizedPerson();
 				break;
-			case 'n': audiNav();
+			case 'n': audiNav.Navigate();
 			default:
 				break;
 			}
