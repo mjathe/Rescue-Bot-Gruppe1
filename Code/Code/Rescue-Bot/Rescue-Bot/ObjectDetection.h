@@ -11,19 +11,19 @@ public:
 
 	 ObjectDetection()
 	{
-		 
+		 Sensorcontroller senContr;
+		 DriveMode drvMode;
 
-
-		if (Sensorcontroller.checkWater() == true)
+		if (senContr.checkWater() == true)
 		{
-			DriveMode.startWaterMode()
+			 drvMode.startWaterMode()
 		}
-		else if (Sensorcontroller.checkWater() != true)
+		else if (senContr.checkWater() != true)
 		{
-			DriveMode.startLandMode()
+			drvMode.startLandMode()
 		}
 
-		if (Sensorcontroller.checkUltrasonicSensors() == true)
+		if (senContr.checkUltrasonicSensors() == true)
 		{
 
 		}
