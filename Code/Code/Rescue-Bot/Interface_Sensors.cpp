@@ -8,6 +8,11 @@ class Sensor {
         virtual int getSensor() = 0;
 
 };
+class Sensorstring {
+    public:
+        virtual string getSensorstring() = 0;
+
+};
 
 class Ultraa: public Sensor {
     public:
@@ -33,17 +38,17 @@ class Wasser: public Sensor {
         }
 };
 
-class AudioMain: public Sensor {
+class AudioMain: public Sensorstring {
     public:
-        int getSensor(){
-            int data = 0011;
+        string getSensorstring(){
+            string data = "0011";
             return data;
         }
 };
-class ObjectId: public Sensor {
+class ObjectId: public Sensorstring {
     public:
-        int getSensor(){
-            int data = 0;
+        string getSensorstring(){
+            string data = "branch";
             return data;
         }
 };
@@ -59,6 +64,6 @@ int main(void)
     cout << "U0 " << Ula.getSensor();
     cout << "\nU1 " << Ulb.getSensor();
     cout << "\nW0 " << Was.getSensor();
-    cout << "\nA0 " << Audm.getSensor();
-    cout << "\nObjectID " << OID.getSensor();
+    cout << "\nA0 " << Audm.getSensorstring();
+    cout << "\nObjectID " << OID.getSensorstring();
 }
