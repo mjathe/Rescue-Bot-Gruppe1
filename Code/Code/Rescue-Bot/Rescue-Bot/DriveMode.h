@@ -1,11 +1,14 @@
 #pragma once
 class DriveMode
 {
-	void startModeWater()
+public:
+	void startWaterMode();
+	void startLandMode();
+	void startWaterMode()
 	{
 
 	}
-	void startModeLand()
+	void startLandMode()
 	{
 
 	}

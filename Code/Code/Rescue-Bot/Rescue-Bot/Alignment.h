@@ -1,24 +1,28 @@
+#pragma once
+#include "Sensorcontroller.h"
+#include "EngineController.h"
+
 class Alignment
 {
 
-#include "Sensorcontroller.h"
-#include "EngineController.h"
- 
+
 
 private:
-	int differenceAlignment(int alignmentToAdjust) { return difference };
-public: 
+	int differenceAlignment(int alignmentToAdjust);
+
+public:
 	void adjustAlignment(int alignmentIsNeed);
-};
+
 	int differenceAlignment(int alignmentToAdjust)
 	{
 		Sensorcontroller  sensCont;
 		int currentalignmentOnMap = sensCont.compass();
-		int difference = alignmentToAdjust - currentAlignmentonMap;
+		int difference = alignmentToAdjust - currentalignmentOnMap;
 		return difference;
 	}
 	void adjustAlignment(int alignmentIsNeed)
 	{
 		EngineController engineCont;
-		engineCont.rotation(differenceAlignment(alignmentIsNeed))
-	} 
+		engineCont.rotation(differenceAlignment(alignmentIsNeed));
+	}
+};

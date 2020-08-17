@@ -22,6 +22,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)DriveMode.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)EngineController.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ObjectDetection.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ObjectRecognition.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Sensorcontroller.h" />
   </ItemGroup>
 </Project>
