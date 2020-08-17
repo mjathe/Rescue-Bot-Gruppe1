@@ -83,22 +83,47 @@ class Sensorcontroller
 		return speed;
 
 	}
+	/*
+	Aufruf:
+		Sensorcontroller.checkUltrasonicSensors(29,27); 
+		Sensorcontroller.checkUltrasonicsensors(29,27,25,23);
 
 
-	public int checkUltrasonicsensors(ultrasonicVL, ultrasonicVR) 
+	public int[] checkUltrasonicsensors(int ultrasonicVL,int ultrasonicVR,int ultrasonicHL,int ultrasonicHR)
 	{
 
 
-		int ultrasonicVL = readDigitalValue(ultrasonicPin1);
-		int ultrasonicVR = readDigitalValue(ultrasonicPin2);
-		int ultrasonicHL = readDigitalValue(ultrasonicPin3);
-		int ultrasonicHR = readDigitalValue(ultrasonicPin4);
+		 ultrasonicVL = readDigitalValue(ultrasonicPin1);
+		 ultrasonicVR = readDigitalValue(ultrasonicPin2);
+		 ultrasonicHL = readDigitalValue(ultrasonicPin3);
+		 ultrasonicHR = readDigitalValue(ultrasonicPin4);
 
 
-		return {SensorRead(ultrasonicVL),SensorRead(ultrasonicVR)};
+		return ?new? { ultrasonicVL, ultrasonicVR,ultrasonicHL, ultrasonicHR };
+	}*/
+	/*public int[] checkUltrasonicsensors(int ultrasonicVL,int ultrasonicVR)
+{
+
+
+	 ultrasonicVL = readDigitalValue(ultrasonicPin1);
+	 ultrasonicVR = readDigitalValue(ultrasonicPin2);
+
+
+	return ??new?? { ultrasonicVL,ultrasonicVR };
+}  */
+	public int[] checkUltrasonicsensors() 
+	{
+		
+
+		int  ultrasonicVL = readDigitalValue(ultrasonicPin1);
+		int  ultrasonicVR = readDigitalValue(ultrasonicPin2);
+
+
+
+		return ?new?{ultrasonicVL,ultrasonicVR};
 	}
 
-	public int checkwater(water) 
+	public int checkwater() 
 	{
 		int water = readWater(watersens);
 		return water;
