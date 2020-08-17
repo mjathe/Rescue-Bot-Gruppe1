@@ -9,7 +9,7 @@ class Sensor {
 };
 class Sensorarray {
     public:
-        virtual int* getSensorarray() = 0;
+        virtual string getSensorarray() = 0;
 };
 
 class Ultraa: public Sensor {
@@ -95,31 +95,29 @@ class Wasser: public Sensor {
 
 class Audio: public Sensorarray {
     public:
-        int* getSensorarray(){
+        string getSensorarray(){
+            string a = "1,1,1,0,0,0,1,1,0";
             if (pos[0] == 2 || pos[0] == 3 || pos[0] == 4){
-                int a[9] = {1,1,1,0,0,0,0,0,1};
+                a = "1,1,1,0,0,0,0,0,1";
                 return a;
             }
             if (pos[1] == 2 || pos[1] == 3 || pos[1] == 4){
-                int b[9] = {1,1,1,0,0,0,0,1,0};
-                return b;
+                a = "1,1,1,0,0,0,0,1,0";
+                return a;
             }
             if (pos[0] == 27 || pos[0] == 28 || pos[0] == 29){
-                int c[9] = {1,1,1,0,0,0,0,1,1};
-                return c;
+                a = "1,1,1,0,0,0,0,1,1";
+                return a;
             }
             if (pos[1] == 27 || pos[1] == 28 || pos[1] == 29){
-                int d[] = {1,1,1,0,0,0,1,0,0};
-                return d;
+                a = "1,1,1,0,0,0,1,0,0";
+                return a;
             }
             else{
-                int e[] = {1,1,1,0,0,0,1,1,0};
-                return e;
+                return a;
             }
         }
 };
-
-
 int main(void)
 {
     Ultraa Ula;
@@ -129,5 +127,5 @@ int main(void)
     cout << "U0 " << Ula.getSensor();
     cout << "\nU1 " << Ulb.getSensor();
     cout << "\nW0 " << Was.getSensor();
-    cout << "\nA ";
+    cout << "\nA " << Aud.getSensorarray();
 }
