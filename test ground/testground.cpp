@@ -37,4 +37,9 @@ Testground::Testground()
   {"R","G","G","G","G","R","R","R","R","R","R","G","W","W","O","W","W","W","W","W","W","R","R","R","R","R","R","G","R","R"},
   {"R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R","R"},
   }
+  orientation = "W";
+
+}
+void Testground::move_forward(){
+  
 }

@@ -9,6 +9,8 @@ class Testground
     ~Testground();
     int[] position;
     char[][] map;
+    char orientation;
+    void move_forward();
 
 
 };
