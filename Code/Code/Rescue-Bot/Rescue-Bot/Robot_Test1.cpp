@@ -2,8 +2,14 @@
 #include <Adafruit_PWMServoDriver.h>
 
 using namespace std;
-#define MrPin1 = D3;
-#define MrPin2 = D4;
+#define MrPin1 = D1;
+#define MrPin2 = D2;
+#define M1Pin1 = D3;
+#define M1Pin2 = D4;
+#define M2Pin1 = D5;
+#define M2Pin2 = D6;
+#define M3Pin1 = D7;
+#define M3Pin2 = D8;
 #define SERVOMIN  150 // This is the 'minimum' pulse length count (out of 4096)
 #define SERVOMAX  600 // This is the 'maximum' pulse length count (out of 4096)
 #define USMIN  600 // This is the rounded 'minimum' microsecond length based on the minimum pulse of 150
