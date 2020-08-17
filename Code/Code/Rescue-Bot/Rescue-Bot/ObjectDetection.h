@@ -1,8 +1,14 @@
 #pragma once
 #include "Sensorcontroller.h"
 #include "DriveMode.h"
+#include "ObjectRecognition.h"
+#include "EngineController.h"
+#include "AudioNavigation.h"
 class ObjectDetection
 {
+private:
+	void recognizedPerson();
+		void recognizedBranch();
 
 
 public:
@@ -11,6 +17,7 @@ public:
 	{
 		Sensorcontroller senContr;
 		DriveMode drvMode;
+		AudioNavigation audiNav;
 
 		if (senContr.checkWater() == true)
 		{
@@ -23,7 +30,26 @@ public:
 
 		if (senContr.checkUltrasonicSensors() == true)
 		{
-
+			ObjectRecognition objRec;
+			switch (objRec.recognized())
+			{
+			case 'b': recognizedBranch();
+				break;
+			case 'p': recognizedPerson();
+				break;
+			case 'n': audiNav();
+			default:
+				break;
+			}
 		}
+	}
+
+	void recognizedBranch()
+	{
+		//callOperator
+	}
+	void recognizedPerson()
+	{
+		//callOperator
 	}
 };

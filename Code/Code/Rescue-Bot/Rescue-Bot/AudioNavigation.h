@@ -1,36 +1,53 @@
 #pragma once
-class AudioNavigation
-{
+#include <string.h>
 #include "Sensorcontroller.h"
 #include "Alignment.h"
-#define int[4] audioData;
+class AudioNavigation
+{
+private:
+ int audioData[4] ;
+public:     
+    void Navigate() ;
 
-	 AudioNavigation()
-	{
-		 audioData = Sensorcontroller.readAudioSensors();
-		 if (audioData == {1, 0, 0, 0})
+
+    void  Navigate()
+    {
+        Sensorcontroller sensCont; Alignment ali; 
+           //{ 1,0,0,0}; start NACH TURM 1
+           //{ 1, 0, 0, 1 }; start nach turm4
+            //{ 0, 1, 0, 0 }; turm 3 nach turm 4
+           //{ 0, 1, 1, 0 }; im punkt 2 ausrichtung auf turm 3
+           //{ 1,0,1,0 } turm 1 nach turm 2
+            size_t t = 4;
+        for (size_t i = 0; i < 4; i++)
+        {
+            audioData[i] = sensCont.readAudioSensors()[i];
+        }
+
+
+        if (memcmp(audioData,new int[]{ 1,0,0,0 },t) == 0) //nord turm1
 		 {
-			 Alingment.adjustAlignment(0);
+			 ali.adjustAlignment(0);
 		 }
-		 else if (audioData == {1, 0, 0, 1})
+		 else if (memcmp(audioData,new int[]{1, 0, 0, 1},t) == 0)  //
 		 {
-			 Alignment.adjustAlignment(90);
+			 ali.adjustAlignment(90);
 		 }
-         else if (audioData == {1, 1, 0, 0})
+         else if (memcmp(audioData,new int[]{1, 1, 0, 0},t) == 0)
          {
-             Alignment.adjustAlignment(90) // to East vom turm 1 aus liegt der turm richtung osten
+            ali.adjustAlignment(90); // to East vom turm 1 aus liegt der turm richtung osten
          }
-         else if (audioData == {0, 1, 0, 0})
+         else if (memcmp(audioData,new int[]{0, 1, 0, 0},t) == 0)
          {
-             Alignment.adjustAlignment(90) 
+            ali.adjustAlignment(90);
          }
-         elseif(audioData == {0, 1, 1, 0})
+         else if(memcmp(audioData,new int[]{0, 1, 1, 0},t) == 0)
          {
-             Alignment.adjustAlignment(180) //to South ausrichtung auf turm 4 (hierzwischen muss irgendwo der Verletze liegen)
+             ali.adjustAlignment(180); //to South ausrichtung auf turm 4 (hierzwischen muss irgendwo der Verletze liegen)
          }
-         else if (audioData == {0, 0, 1, 0})
+         else if (memcmp(audioData,new int[]{0, 0, 1, 0},t) == 0)
          {
-             Alignment.adjustAlignment(180)
+            ali.adjustAlignment(180);
          }
 
 	}

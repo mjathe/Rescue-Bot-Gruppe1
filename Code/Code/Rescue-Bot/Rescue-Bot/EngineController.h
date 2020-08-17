@@ -3,10 +3,10 @@ class EngineController
 {
 
 
-#define enginePin1 = D3;
-#define enginePin2 = D4;
-#define directionPin1 = D5;
-#define directionPin2 = D6;
+#define enginePin1  D3;
+#define enginePin2  D4;
+#define directionPin1  D5;
+#define directionPin2  D6;
 #define degreePerSecond  3;
 
 #define delay;
@@ -68,8 +68,9 @@ private:
 			break;
 		default: engine(0, 0);
 			break;
-		};
+		}
 	}
+
 	void rotation(int angle)
 	{
 		if (angle <= 180 )
