@@ -15,6 +15,10 @@ public:
 
 	ObjectDetection()
 	{
+	}
+
+	void detectObject()
+	{
 		Sensorcontroller senContr;
 		DriveMode drvMode;
 		AudioNavigation audiNav;
@@ -42,8 +46,8 @@ public:
 				break;
 			}
 		}
-	}
 
+	}
 	void recognizedBranch()
 	{
 		//callOperator
