@@ -3,20 +3,22 @@ class EngineController
 {
 
 
-	#define enginePin1 = D3;
-	#define enginePin2 = D4;
-	#define directionPin1 = D5;
-	#define directionPin2 = D6;
-	#define degreePerSec = 3;
+#define enginePin1 = D3;
+#define enginePin2 = D4;
+#define directionPin1 = D5;
+#define directionPin2 = D6;
+#define degreePerSecond  3;
 
-	#define delay;
-	#define digitalWrite();
+#define delay;
+#define digitalWrite();
 
 public:
 	void acclerator(int direction);
+	void rotation(int angle);
 
 private:
 	void engine(int engine1, int engine2);
+
 
 	void engine(int engine1, int engine2)		//Engine1 = right Engine2 = left
 	{
@@ -66,13 +68,14 @@ private:
 			break;
 		default: engine(0, 0);
 			break;
-		}
+		};
 	}
 	void rotation(int angle)
 	{
 		if (angle <= 180 )
 		{
-			for (size_t i = angle / degreePerSec; i > 0 ; i--)
+			int secondsToRotate = angle / degreePerSecond;
+			for (size_t i = secondsToRotate ; i > 0 ; i--)
 			{
 				engine(100, 0);
 				delay(1000);    //spezifisch für arduino 
@@ -81,14 +84,15 @@ private:
 		}
 		else if (angle > 180)
 		{
-			for (size_t i = (360 - angle) / degreePerSec; i > 0; i--)
+			int secondsToRotate = (360 - angle) / degreePerSecond;
+			for (size_t i = secondsToRotate; i > 0; i--)
 			{
 				engine(0, 100);
 				delay(1000);    //spezifisch für arduino 
 			}
 			engine(0, 0);
 		}
-		}
+		
 	}
 
 };

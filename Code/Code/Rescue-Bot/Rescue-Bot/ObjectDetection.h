@@ -5,22 +5,20 @@ class ObjectDetection
 {
 
 
-private:
-
 public:
 
-	 ObjectDetection()
+	ObjectDetection()
 	{
-		 Sensorcontroller senContr;
-		 DriveMode drvMode;
+		Sensorcontroller senContr;
+		DriveMode drvMode;
 
 		if (senContr.checkWater() == true)
 		{
-			 drvMode.startWaterMode()
+			drvMode.startWaterMode();
 		}
 		else if (senContr.checkWater() != true)
 		{
-			drvMode.startLandMode()
+			drvMode.startLandMode();
 		}
 
 		if (senContr.checkUltrasonicSensors() == true)

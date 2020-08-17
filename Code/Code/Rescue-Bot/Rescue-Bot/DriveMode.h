@@ -1,9 +1,12 @@
 #pragma once
 class DriveMode
 {
-	DriveMode()
+	void startModeWater()
 	{
 
 	}
+	void startModeLand()
+	{
 
+	}
 };
