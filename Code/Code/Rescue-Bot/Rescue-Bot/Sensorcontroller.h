@@ -56,7 +56,7 @@ class Sensorcontroller
 
         		else
         		{
-         			exeption"fehlerhaftes Signal";
+         			cout <<"fehlerhaftes Signal"<<;
         		}
         		return audiData;
       	}
