@@ -102,7 +102,7 @@ class Audio: public Sensorarray {
                 a = "1,1,1,0,0,0,0,0,1";
                 return a;
             }
-            if ((pos[1] == 2 || pos[1] == 3 || pos[1] == 4) && trum == 2){
+            else if ((pos[1] == 2 || pos[1] == 3 || pos[1] == 4) && trum == 2){
                 a = "1,1,1,0,0,0,0,1,0";
                 return a;
             }
