@@ -106,11 +106,11 @@ class Audio: public Sensorarray {
                 a = "1,1,1,0,0,0,0,1,0";
                 return a;
             }
-            if ((pos[0] == 27 || pos[0] == 28 || pos[0] == 29) && trum == 3){
+            else if ((pos[0] == 27 || pos[0] == 28 || pos[0] == 29) && trum == 3){
                 a = "1,1,1,0,0,0,0,1,1";
                 return a;
             }
-            if ((pos[1] == 27 || pos[1] == 28 || pos[1] == 29) && trum == 4){
+            else if ((pos[1] == 27 || pos[1] == 28 || pos[1] == 29) && trum == 4){
                 a = "1,1,1,0,0,0,1,0,0";
                 return a;
             }
