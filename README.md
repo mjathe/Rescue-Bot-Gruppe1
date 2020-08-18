@@ -2,6 +2,8 @@
 Wenn Menschen an gefährlichen Orten verunfallen. müssen diese gerettet werden. Manchmal ist die Situation so gefährlich, dass eine erhöhte Gefahr für den Rettenden nicht ausgeschlossen werden kann. In solchen Situation ist es sinnvoll Rettungsroboter einzusetzen.
 
 Im Rahmen dieses Projekts soll ein Rettungsroboter entwickelt werden, welcher sich autonom in einer festgelegten Umgebung bewegen kann.
+## Projektmanagement
+[Trello](https://trello.com/b/rEBa2gHf/rescue-bot-group-1)
 
 ## Szenario
 Das Szenario ist ein Waldbrand. Der Roboter wird an einer bestimmten Stelle ausgesetzt und soll sich autonom zu der zu rettenden Person navigieren. Für die Selbstbehandlung der Person, trägt der Roboter ein Erste-Hilfe-Kit mit sich. Außerdem soll bei der Person ein blaues Rauchsignal gezündet werden, damit ein Rettungsteam den Standort bestimmen kann. Für die Kommunikation zwischen Rettungsteam und der Person besitzt der Roboter eine Gegensprechanlage.
