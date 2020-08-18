@@ -14,6 +14,7 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AutoMode.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Robot_Test1.cpp" />
   </ItemGroup>
   <ItemGroup>

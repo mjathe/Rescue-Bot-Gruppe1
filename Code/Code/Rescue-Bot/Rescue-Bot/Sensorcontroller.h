@@ -9,10 +9,10 @@ class Sensorcontroller
 	#define ultrasonicPin1 29;
 	#define ultrasonicPin2 27;
 	#define ultrasonicPin3 25;
-	#define ultrasonicPin4  23;
+	#define ultrasonicPin4 23;
 	#define pinMicrofone 22;
 
-	#define watersens  20;
+	#define watersens 20;
 	#define sleep;
 	#define readSensors 1;
 
@@ -26,7 +26,7 @@ private:
 
 
 	int audioSignals[9];
-	int audiData[4];
+	int audioData[4];
 	bool water;
 	int obstacle[2];
 
@@ -52,17 +52,17 @@ public:
     		}
 			for (size_t i = 0; i < 3; i++)
 			{
-				if (audioSignals.subArray[0, 5] == new int[]{1, 1, 1, 0, 0, 0})
+				if (audioSignals{1, 1, 1, 0, 0, 0, 0, 0, 1} || audioSignals{1, 1, 1, 0, 0, 0, 0, 1, 0} || audioSignals{1, 1, 1, 0, 0, 0, 0, 1, 1} || audioSignals{1, 1, 1, 0, 0, 0, 1, 0, 0})
 				{
-					switch (audioSignals.subArray[6, 8])
+					switch (audioSignals)
 					{
-					case {0,0,1}: audioData[0] = true;
+					case {1, 1, 1, 0, 0, 0, 0, 0, 1}: audioData[0] = true;
 						break;
-					case {0,1,0}: audiData[1] = true;
+					case {1, 1, 1, 0, 0, 0, 0, 1, 0}: audioData[1] = true;
 						break;
-					case {0,1,1}: audioData[2] = true;
+					case {1, 1, 1, 0, 0, 0, 0, 1, 1}: audioData[2] = true;
 						break;
-					case {1,0,0}: audiData[3] = true;
+					case {1, 1, 1, 0, 0, 0, 1, 0, 0}: audioData[3] = true;
 						break;
 					}
 				}
@@ -71,7 +71,7 @@ public:
         		{
          			cout <<"fehlerhaftes Signal"<<;
         		}
-        		return audiData;
+        		return audioData;
       	}
 
 	 float gyroscope()
