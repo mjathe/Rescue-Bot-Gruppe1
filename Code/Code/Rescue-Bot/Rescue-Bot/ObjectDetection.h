@@ -12,12 +12,10 @@ private:
 
 
 public:
+	void detectObject();
+};
 
-	ObjectDetection()
-	{
-	}
-
-	void detectObject()
+	void ObjectDetection::detectObject()
 	{
 		Sensorcontroller senContr;
 		DriveMode drvMode;
@@ -48,12 +46,12 @@ public:
 		}
 
 	}
-	void recognizedBranch()
+	void ObjectDetection::recognizedBranch()
 	{
 		//callOperator
 	}
-	void recognizedPerson()
+	void ObjectDetection::recognizedPerson()
 	{
 		//callOperator
 	}
-};
+

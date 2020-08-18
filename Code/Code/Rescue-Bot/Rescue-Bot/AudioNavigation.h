@@ -1,3 +1,4 @@
+
 #pragma once
 #include <stdio.h>
 #include <string.h>
@@ -6,12 +7,12 @@
 class AudioNavigation
 {
 private:
- int audioData[4] ;
-public:     
-    void Navigate() ;
+    int audioData[4];
+public:
+    void Navigate();
 
-
-    void  Navigate()
+};
+    void  AudioNavigation::Navigate()
     {
         Sensorcontroller sensCont; Alignment ali; 
            //{ 1,0,0,0}; start NACH TURM 1
@@ -26,30 +27,30 @@ public:
         }
 
 
-        if (memcmp(audioData,new int[]{ 1,0,0,0 },t) == 0) //nord turm1
+        if (memcmp(audioData,new int[4]{ 1,0,0,0 },t) == 0) //nord turm1
 		 {
 			 ali.adjustAlignment(0);
 		 }
-		 else if (memcmp(audioData,new int[]{1, 0, 0, 1},t) == 0)  //
+		 else if (memcmp(audioData,new int[4]{1, 0, 0, 1},t) == 0)  //
 		 {
 			 ali.adjustAlignment(90);
 		 }
-         else if (memcmp(audioData,new int[]{1, 1, 0, 0},t) == 0)
+         else if (memcmp(audioData,new int[4]{1, 1, 0, 0},t) == 0)
          {
             ali.adjustAlignment(90); // to East vom turm 1 aus liegt der turm richtung osten
          }
-         else if (memcmp(audioData,new int[]{0, 1, 0, 0},t) == 0)
+         else if (memcmp(audioData,new int[4]{0, 1, 0, 0},t) == 0)
          {
             ali.adjustAlignment(90);
          }
-         else if(memcmp(audioData,new int[]{0, 1, 1, 0},t) == 0)
+         else if(memcmp(audioData,new int[4]{0, 1, 1, 0},t) == 0)
          {
              ali.adjustAlignment(180); //to South ausrichtung auf turm 4 (hierzwischen muss irgendwo der Verletze liegen)
          }
-         else if (memcmp(audioData,new int[]{0, 0, 1, 0},t) == 0)
+         else if (memcmp(audioData,new int[4]{0, 0, 1, 0},t) == 0)
          {
             ali.adjustAlignment(180);
          }
 
 	}
-};
+

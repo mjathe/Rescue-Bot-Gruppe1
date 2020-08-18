@@ -12,17 +12,17 @@ private:
 
 public:
 	void adjustAlignment(int alignmentIsNeed);
-
-	int differenceAlignment(int alignmentToAdjust)
+};
+	int Alignment::differenceAlignment(int alignmentToAdjust)
 	{
 		Sensorcontroller  sensCont;
 		int currentalignmentOnMap = sensCont.compass();
 		int difference = alignmentToAdjust - currentalignmentOnMap;
 		return difference;
 	}
-	void adjustAlignment(int alignmentIsNeed)
+	void Alignment::adjustAlignment(int alignmentIsNeed)
 	{
 		EngineController engineCont;
 		engineCont.rotation(differenceAlignment(alignmentIsNeed));
 	}
-};
+

@@ -2,13 +2,14 @@
 #include "Sensorcontroller.h"
 class ObjectRecognition
 {
-	
+
+
 public:
 	char recognized();
-
-	char recognized()
+};
+	char ObjectRecognition::recognized()
 	{
-		Sensorcontroller sensCont; 
+		Sensorcontroller sensCont;
 		switch (sensCont.cameraMeasurement())
 		{
 		case 0: return 'b';
@@ -22,4 +23,3 @@ public:
 
 
 
-};
