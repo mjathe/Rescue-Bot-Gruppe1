@@ -1,0 +1,3 @@
+﻿Rescue_Bot_Interface.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: char __thiscall SensorController::cameraMeasurement(void)" (?cameraMeasurement@SensorController@@QAEDXZ)" in Funktion ""public: char __thiscall ObjectRecognition::recognized(void)" (?recognized@ObjectRecognition@@QAEDXZ)".
+Rescue_Bot_Interface.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: void __thiscall AutoMode::startAutoMode(void)" (?startAutoMode@AutoMode@@QAEXXZ)" in Funktion "_main".
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe : fatal error LNK1120: 2 nicht aufgelöste Externe

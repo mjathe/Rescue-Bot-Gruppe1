@@ -1,5 +1,6 @@
+#pragma once
 #include <iostream>
-#Include "../Interface_Sensors.cpp"
+//#include "../Interface_Sensors.cpp"
 
 using namespace std;
 
@@ -34,13 +35,31 @@ public:
 	float compass();
 	float gyroscope();
 	float acceleration();
-	int* checkUltraSonicSensors();
+	int* checkUltrasonicSensors();
 	int checkWater();
+	char cameraMeasurement();
 
 };
 char* readSensors(int freqTow)
 {	
-
+	freqTow = 5;
+	return new char[9]{ '1','1','1','0','0','0','0','0', '1' };
+}
+int readWater(int wert)
+{
+	return wert;
+}
+int readUltrasonic(int wert)
+{
+	return wert;
+}
+float readMagneticField(float wert1,float wert2,float wert3)
+{
+	return wert1,wert2,wert3;
+}
+float readGyroscope(float wert1, float wert2, float wert3)
+{
+	return wert1, wert2, wert3;
 }
 	 int* SensorController::readAudioSensors()
 	{
@@ -51,24 +70,28 @@ char* readSensors(int freqTow)
 			 char audioSignals[9];
 			 for (size_t i = 0; i < 4; i++)
 			 {
-				 audioSignals[] = readSensors(freqTow);
-				 if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9) == 0)
+				 for (size_t i = 0; i < 9; i++)
+				 {
+					 audioSignals[i] = readSensors(freqTow)[i];
+				 }
+
+				 if (memcmp(audioSignals,new char[9] { '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9) == 0)
 				 {
 					 audioData[0] = true;
 				 }
-				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0','1', '0' }, 9) == 0)
+				 else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0','1', '0' }, 9) == 0)
 				 {
 					 audioData[1] = true;
 				 }
-				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0', '1', '1' }, 9) == 0)
+				 else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0', '1', '1' }, 9) == 0)
 				 {
 					 audioData[2] = true;
 				 }
-				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '1', '0', '0' }, 9) == 0)
+				 else if (memcmp(audioSignals,new char[9] { '1', '1', '1', '0', '0', '0', '1', '0', '0' }, 9) == 0)
 				 {
 					 audioData[3] = true;
 				 }
-				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '1', '1', '0' }, 9) == 0)
+				 else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '1', '1', '0' }, 9) == 0)
 				 {
 					 //no signal 
 
@@ -113,17 +136,10 @@ char* readSensors(int freqTow)
 	}
 		
 
-	 float SensorController::acceleration()
-	{
-		speed = readAcceleration(x3, y3, z3);
-		
-		return speed;
-	}
-
-	int* SensorController::checkUltraSonicSensors() 
+	int* SensorController::checkUltrasonicSensors()
 	{		
-		ultrasonicVL = readDigitalValue(ultrasonicPin1);
-		ultrasonicVR = readDigitalValue(ultrasonicPin2);
+		int ultrasonicVL = readUltrasonic(ultrasonicPin1);
+		int ultrasonicVR = readUltrasonic(ultrasonicPin2);
 		
 		return new int[]{ultrasonicVL,ultrasonicVR};
 	}
@@ -134,4 +150,9 @@ char* readSensors(int freqTow)
 		
 		return water;
 	}
-}
+
+	 char cameraMeasurement()
+	 {
+		 char msg = 'p';
+		 return msg;
+	}

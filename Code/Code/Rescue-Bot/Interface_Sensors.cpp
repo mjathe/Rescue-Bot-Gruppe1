@@ -98,19 +98,19 @@ class Audio: public Sensorarray {
     public:
         string getSensorarray(){
             string a = "1,1,1,0,0,0,1,1,0";
-            if ((pos[0] == 2 || pos[0] == 3 || pos[0] == 4) && trum == 1){
+            if ((pos[0] == 2 || pos[0] == 3 || pos[0] == 4) && turm == 1){
                 a = "1,1,1,0,0,0,0,0,1";
                 return a;
             }
-            else if ((pos[1] == 2 || pos[1] == 3 || pos[1] == 4) && trum == 2){
+            else if ((pos[1] == 2 || pos[1] == 3 || pos[1] == 4) && turm == 2){
                 a = "1,1,1,0,0,0,0,1,0";
                 return a;
             }
-            else if ((pos[0] == 27 || pos[0] == 28 || pos[0] == 29) && trum == 3){
+            else if ((pos[0] == 27 || pos[0] == 28 || pos[0] == 29) && turm == 3){
                 a = "1,1,1,0,0,0,0,1,1";
                 return a;
             }
-            else if ((pos[1] == 27 || pos[1] == 28 || pos[1] == 29) && trum == 4){
+            else if ((pos[1] == 27 || pos[1] == 28 || pos[1] == 29) && turm == 4){
                 a = "1,1,1,0,0,0,1,0,0";
                 return a;
             }

@@ -1,10 +1,10 @@
 #pragma once
 class EngineController
 {
-#define enginePin1  D3
-#define enginePin2  D4
-#define directionPin1  D5
-#define directionPin2  D6
+#define enginePin1  3
+#define enginePin2  4
+#define directionPin1  5
+#define directionPin2  6
 #define degreePerSecond  3
 
 #define delay  

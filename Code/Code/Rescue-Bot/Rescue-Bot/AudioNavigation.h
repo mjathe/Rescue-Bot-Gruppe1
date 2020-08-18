@@ -2,7 +2,7 @@
 #pragma once
 #include <stdio.h>
 #include <string.h>
-#include "Sensorcontroller.h"
+#include "SensorController.h"
 #include "Alignment.h"
 class AudioNavigation
 {
@@ -14,7 +14,7 @@ public:
 };
     void  AudioNavigation::Navigate()
     {
-        Sensorcontroller sensCont; Alignment ali; 
+        SensorController sensCont; Alignment ali; 
            //{ 1,0,0,0}; start NACH TURM 1
            //{ 1, 0, 0, 1 }; start nach turm4
             //{ 0, 1, 0, 0 }; turm 3 nach turm 4

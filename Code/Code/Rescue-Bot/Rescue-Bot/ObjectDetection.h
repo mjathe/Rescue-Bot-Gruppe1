@@ -1,5 +1,5 @@
 #pragma once
-#include "Sensorcontroller.h"
+#include "SensorController.h"
 #include "DriveMode.h"
 #include "ObjectRecognition.h"
 #include "EngineController.h"
@@ -17,20 +17,20 @@ public:
 
 	void ObjectDetection::detectObject()
 	{
-		Sensorcontroller senContr;
+		SensorController senContr;
 		DriveMode drvMode;
 		AudioNavigation audiNav;
 
-		if (senContr.checkWater() == true)
+		if (senContr.checkWater() == 1)
 		{
 			drvMode.startWaterMode();
 		}
-		else if (senContr.checkWater() != true)
+		else if (senContr.checkWater() != 1)
 		{
 			drvMode.startLandMode();
 		}
 
-		if (senContr.checkUltrasonicSensors() == true)
+		if (senContr.checkUltrasonicSensors()[0] == 1 || senContr.checkUltrasonicSensors()[1] == 1)
 		{
 			ObjectRecognition objRec;
 			switch (objRec.recognized())

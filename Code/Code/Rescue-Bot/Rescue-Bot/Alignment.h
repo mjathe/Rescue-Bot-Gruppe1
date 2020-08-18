@@ -1,5 +1,5 @@
 #pragma once
-#include "Sensorcontroller.h"
+#include "SensorController.h"
 #include "EngineController.h"
 
 class Alignment
@@ -11,7 +11,7 @@ public:
 };
 	int Alignment::differenceAlignment(int alignmentToAdjust)
 	{
-		Sensorcontroller  sensCont;
+		SensorController  sensCont;
 		int currentalignmentOnMap = sensCont.compass();
 		int difference = alignmentToAdjust - currentalignmentOnMap;
 		return difference;

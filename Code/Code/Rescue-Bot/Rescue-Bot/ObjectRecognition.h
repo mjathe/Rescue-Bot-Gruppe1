@@ -1,5 +1,6 @@
 #pragma once
-#include "Sensorcontroller.h"
+#pragma once
+#include "SensorController.h"
 class ObjectRecognition
 {
 
@@ -9,7 +10,7 @@ public:
 };
 	char ObjectRecognition::recognized()
 	{
-		Sensorcontroller sensCont;
+		SensorController sensCont;
 		switch (sensCont.cameraMeasurement())
 		{
 		case 0: return 'b';
