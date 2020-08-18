@@ -38,5 +38,5 @@ Das Szenario ist ein Waldbrand. Der Roboter wird an einer bestimmten Stelle ausg
 
 ## Use Case Diagram
 
-![Use Case Diagram](/REVISION/diagrams/Use_Case,png)
+![Use Case Diagram](/REVISION/diagrams/Use_Case.png)
 
