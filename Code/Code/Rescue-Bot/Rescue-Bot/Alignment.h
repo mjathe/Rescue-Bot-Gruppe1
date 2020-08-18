@@ -4,12 +4,8 @@
 
 class Alignment
 {
-
-
-
 private:
 	int differenceAlignment(int alignmentToAdjust);
-
 public:
 	void adjustAlignment(int alignmentIsNeed);
 };
