@@ -32,7 +32,7 @@ Das Szenario ist ein Waldbrand. Der Roboter wird an einer bestimmten Stelle ausg
 
 ## Kontextdiagramm
 
-![Kontextdiagramm(/REVISION/diagrams/contex_diagram.jpg)
+![Kontextdiagramm(https://github.com/mjathe/Rescue-Bot-Gruppe1/blob/master/REVISION/diagrams/contex_diagram.png)
 
 
 
