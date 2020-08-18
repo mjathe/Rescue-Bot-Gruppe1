@@ -1,5 +1,5 @@
 #include <iostream>
-
+#Include "../Interface_Sensors.cpp"
 
 using namespace std;
 
@@ -14,7 +14,6 @@ class SensorController
 
 #define watersens 20
 #define sleep
-#define readSensors getSensorarray(freqTow);
 
 private:
 	float x1, y1, z1;	//Gyroscope
@@ -39,6 +38,10 @@ public:
 	int checkWater();
 
 };
+char* readSensors(int freqTow)
+{	
+
+}
 	 int* SensorController::readAudioSensors()
 	{
 	//AudioOne{1,1,1,0,0,0,0,0,1} northwest
@@ -46,33 +49,35 @@ public:
 	//AudioThree{1,1,1,0,0,0,0,1,1} northeast
 	//Audiofour{1,1,1,0,0,0,1,0,0} Southeast shortway
 			 char audioSignals[9];
+			 for (size_t i = 0; i < 4; i++)
+			 {
+				 audioSignals[] = readSensors(freqTow);
+				 if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9) == 0)
+				 {
+					 audioData[0] = true;
+				 }
+				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0','1', '0' }, 9) == 0)
+				 {
+					 audioData[1] = true;
+				 }
+				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0', '1', '1' }, 9) == 0)
+				 {
+					 audioData[2] = true;
+				 }
+				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '1', '0', '0' }, 9) == 0)
+				 {
+					 audioData[3] = true;
+				 }
+				 else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '1', '1', '0' }, 9) == 0)
+				 {
+					 //no signal 
 
-				audioSignals[] = readSensors;
-				if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9)==0)
-				{
-					audioData[0] = true;
-				}
-				else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0','1', '0'}, 9) == 0)
-				{
-					audioData[1] = true;
-				}
-				else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '0', '1', '1' }, 9) == 0)
-				{
-					audioData[2] = true;
-				}
-				else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '1', '0', '0'}, 9) == 0)
-				{
-					audioData[3] = true;
-				}
-				else if (memcmp(audioSignals, { '1', '1', '1', '0', '0', '0', '1', '1', '0' }, 9) == 0)
-				{
-					//no signal 
-
-				}
-				else
-				{
-					//auch fehler
-				}						
+				 }
+				 else
+				 {
+					 //auch fehler
+				 }
+			 }
 				/*
 				if (audioSignals{1, 1, 1, 0, 0, 0, 0, 0, 1} || audioSignals{1, 1, 1, 0, 0, 0, 0, 1, 0} || audioSignals{1, 1, 1, 0, 0, 0, 0, 1, 1} || audioSignals{1, 1, 1, 0, 0, 0, 1, 0, 0})
 				{
