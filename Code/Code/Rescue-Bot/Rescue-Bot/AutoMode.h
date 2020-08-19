@@ -9,7 +9,7 @@ public:
 
 	
 };
-void startAutoMode()
+void AutoMode::startAutoMode()
 {
 	ObjectDetection objDec;
 

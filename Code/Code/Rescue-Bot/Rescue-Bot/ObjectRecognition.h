@@ -11,7 +11,8 @@ public:
 	char ObjectRecognition::recognized()
 	{
 		SensorController sensCont;
-		switch (sensCont.cameraMeasurement())
+		char temp = sensCont.cameraMeasurement();
+		switch (temp)
 		{
 		case 0: return 'b';
 			break;

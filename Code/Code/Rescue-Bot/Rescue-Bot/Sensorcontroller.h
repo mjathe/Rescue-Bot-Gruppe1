@@ -42,8 +42,15 @@ public:
 };
 char* readSensors(int freqTow)
 {	
-	Sensorarray::getSensorarray;
-	return new char[9]{ '1','1','1','0','0','0','0','0', '1' };
+	Audio Aud;
+	char temp[9] = {};
+	for (size_t i = 0; i < 9; i++)
+	{
+		temp[i] = Aud.getSensorarray()[i];
+	}
+
+
+	return 	temp;
 }
 int readWater(int wert)
 {
@@ -51,7 +58,20 @@ int readWater(int wert)
 }
 int readUltrasonic(int wert)
 {
-	return wert;
+	Ultraa Ula;
+	Ultrab Ulb;
+	int temp = 0; 
+	switch (wert)
+	{
+	case 29:  temp = Ula.getSensor();
+		break;
+	case 27: temp = Ulb.getSensor();
+		break;
+	default: temp = 0;
+		break;
+	}
+
+	return  temp;
 }
 float readMagneticField(float wert1,float wert2,float wert3)
 {
@@ -151,8 +171,8 @@ float readGyroscope(float wert1, float wert2, float wert3)
 		return water;
 	}
 
-	 char cameraMeasurement()
+	 char SensorController::cameraMeasurement()
 	 {
-		 char msg = 'p';
+		 char msg = 'n';
 		 return msg;
 	}

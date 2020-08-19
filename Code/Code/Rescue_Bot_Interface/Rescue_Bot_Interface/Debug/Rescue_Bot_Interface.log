@@ -1,3 +1,5 @@
-﻿Rescue_Bot_Interface.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: char __thiscall SensorController::cameraMeasurement(void)" (?cameraMeasurement@SensorController@@QAEDXZ)" in Funktion ""public: char __thiscall ObjectRecognition::recognized(void)" (?recognized@ObjectRecognition@@QAEDXZ)".
-Rescue_Bot_Interface.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol ""public: void __thiscall AutoMode::startAutoMode(void)" (?startAutoMode@AutoMode@@QAEXXZ)" in Funktion "_main".
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe : fatal error LNK1120: 2 nicht aufgelöste Externe
+﻿  Rescue_Bot_Interface.cpp
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\Alignment.h(15,29): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(53): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": temp" wird zurückgegeben
+  LINK : C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
+  Rescue_Bot_Interface.vcxproj -> C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe
