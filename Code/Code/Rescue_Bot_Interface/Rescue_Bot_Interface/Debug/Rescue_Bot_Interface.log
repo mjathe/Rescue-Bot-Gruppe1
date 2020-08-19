@@ -1,5 +1,7 @@
 ﻿  Rescue_Bot_Interface.cpp
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(45,8): error C2259: "Audio": Abstrakte Klasse kann nicht erstellt werden.
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Interface_Sensors.cpp(103): message : Siehe Deklaration von "Audio"
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(45,8): message : aufgrund folgender Member:
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(45,8): message : "std::string Sensorarray::getSensorarray(void)": ist abstrakt
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Interface_Sensors.cpp(13): message : Siehe Deklaration von "Sensorarray::getSensorarray"
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\Alignment.h(15,29): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(53): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": temp" wird zurückgegeben
-  LINK : C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
-  Rescue_Bot_Interface.vcxproj -> C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe

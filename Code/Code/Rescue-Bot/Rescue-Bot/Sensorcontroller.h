@@ -43,11 +43,12 @@ public:
 char* readSensors(int freqTow)
 {	
 	Audio Aud;
-	char temp[9] = {};
-	for (size_t i = 0; i < 9; i++)
+	char temp[9];
+	memcpy((char*)Aud.getSensorarray(freqTow).c_str(),(char*) temp, 9);
+	/*for (size_t i = 0; i < 9; i++) // problem 
 	{
 		temp[i] = Aud.getSensorarray()[i];
-	}
+	}*/
 
 
 	return 	temp;
@@ -90,11 +91,12 @@ float readGyroscope(float wert1, float wert2, float wert3)
 			 char audioSignals[9];
 			 for (size_t i = 0; i < 4; i++)
 			 {
-				 for (size_t i = 0; i < 9; i++)
+				 memcpy(readSensors(freqTow), audioSignals, 9);
+				/* for (size_t i = 0; i < 9; i++)
 				 {
 					 audioSignals[i] = readSensors(freqTow)[i];
 				 }
-
+				 */
 				 if (memcmp(audioSignals,new char[9] { '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9) == 0)
 				 {
 					 audioData[0] = true;
