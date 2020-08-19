@@ -16,6 +16,8 @@ class Sensorarray {
 class Ultraa: public Sensor {
     public:
         int getSensor(){
+            cout << "Bitte geben Sie R/G/O/W ein!" << endl;
+            cin >> identify;
             int data = 0;
             switch(identify){
                 case 'R':
@@ -43,6 +45,8 @@ class Ultraa: public Sensor {
 class Ultrab: public Sensor {
     public:
         int getSensor(){
+            cout << "Bitte geben Sie R/G/O/W ein!" << endl;
+            cin >> identify;
             int data = 0;
             switch(identify){
                 case 'R':
@@ -70,6 +74,8 @@ class Ultrab: public Sensor {
 class Wasser: public Sensor {
     public:
         int getSensor(){
+            cout << "Bitte geben Sie R/G/O/W ein!" << endl;
+            cin >> identify;
             int data = 0;
             switch(identify){
                 case 'R':
@@ -97,6 +103,10 @@ class Wasser: public Sensor {
 class Audio: public Sensorarray {
     public:
         string getSensorarray(){
+            cout << "Bitte geben Sie L ein!" << endl;
+            cin >> pos[0];
+            cout << "Bitte geben Sie B ein!" << endl;
+            cin >> pos[1];
             string a = "1,1,1,0,0,0,1,1,0";
             if ((pos[0] == 2 || pos[0] == 3 || pos[0] == 4) && turm == 1){
                 a = "1,1,1,0,0,0,0,0,1";
