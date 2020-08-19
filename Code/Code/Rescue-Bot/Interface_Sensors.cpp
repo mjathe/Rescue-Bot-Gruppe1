@@ -119,14 +119,4 @@ class Audio: public Sensorarray {
             }
         }
 };
-int main(void)
-{
-    Ultraa Ula;
-    Ultrab Ulb;
-    Wasser Was;
-    Audio Aud;
-    cout << "U0 " << Ula.getSensor();
-    cout << "\nU1 " << Ulb.getSensor();
-    cout << "\nW0 " << Was.getSensor();
-    cout << "\nA " << Aud.getSensorarray();
-}
+
