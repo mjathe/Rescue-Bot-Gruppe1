@@ -3,7 +3,6 @@
 using namespace std;
 char identify = 'R';
 int pos[3] ={28,3};
-int turm = 1;
 class Sensor {
     public:
         virtual int getSensor() = 0;
@@ -11,6 +10,10 @@ class Sensor {
 class Sensorarray {
     public:
         virtual string getSensorarray() = 0;
+    void setturm(int t) {
+         turm = t;
+      }
+        int turm;
 };
 
 class Ultraa: public Sensor {
@@ -103,8 +106,8 @@ class Wasser: public Sensor {
 class Audio: public Sensorarray {
     public:
         string getSensorarray(){
-            cout << "Bitte geben Sie die Turmnummer ein!" << endl;
-            cin >> turm;
+            //cout << "Bitte geben Sie die Turmnummer ein!" << endl;
+            //cin >> turm;
             cout << "Bitte geben Sie L ein!" << endl;
             cin >> pos[0];
             cout << "Bitte geben Sie B ein!" << endl;
