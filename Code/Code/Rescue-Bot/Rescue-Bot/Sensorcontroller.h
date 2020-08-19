@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-//#include "../Interface_Sensors.cpp"
+#include "../Interface_Sensors.cpp"
 
 using namespace std;
 
@@ -42,7 +42,7 @@ public:
 };
 char* readSensors(int freqTow)
 {	
-	freqTow = 5;
+	Sensorarray::getSensorarray;
 	return new char[9]{ '1','1','1','0','0','0','0','0', '1' };
 }
 int readWater(int wert)

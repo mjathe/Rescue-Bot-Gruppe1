@@ -1,3 +1,4 @@
+#pragma once
 #include "ObjectDetection.h"
 #include <Windows.h>
 class AutoMode
