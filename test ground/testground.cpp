@@ -144,10 +144,11 @@ char Testground::move_turn(){
 int* Testground::location(){
     return position;
 }
-int main()
+/*int main()
 {
     Testground Test;
     int *a = Test.location();
     cout<<"Position:\n" << a[0] << " " << a[1];
     return 0;
 }
+*/
