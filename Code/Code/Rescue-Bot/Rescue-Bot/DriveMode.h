@@ -4,14 +4,14 @@ class DriveMode
 {
 private:
 public:
-	void startLandMode();
-	void startWaterMode();
+	void botDrivesOverLand();
+	void botDrivesOverWater();
 };
-	void DriveMode::startWaterMode()
+	void DriveMode::botDrivesOverWater()
 	{
 		int temp = 1;
 	}
-	void DriveMode::startLandMode()
+	void DriveMode::botDrivesOverLand()
 	{
 		int pmet = 1;
 	}

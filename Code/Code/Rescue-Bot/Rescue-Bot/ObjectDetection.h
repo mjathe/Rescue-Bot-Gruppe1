@@ -1,8 +1,8 @@
 #pragma once
 #include "SensorController.h"
 #include "DriveMode.h"
-#include "ObjectRecognition.h"
-#include "EngineController.h"
+#include "ObstacleDetection.h"
+#include "MotorControl.h"
 #include "AudioNavigation.h"
 class ObjectDetection
 {
@@ -23,16 +23,16 @@ public:
 
 		if (senContr.checkWater() == 1)
 		{
-			drvMode.startWaterMode();
+			drvMode.botDrivesOverWater();
 		}
 		else if (senContr.checkWater() != 1)
 		{
-			drvMode.startLandMode();
+			drvMode.botDrivesOverLand();
 		}
 
-		if (senContr.checkUltrasonicSensors()[0] == 1 || senContr.checkUltrasonicSensors()[1] == 1)
+		if (senContr.checkForObjects()[0] == 1 || senContr.checkForObjects()[1] == 1)
 		{
-			ObjectRecognition objRec;
+			ObstacleDetection objRec;
 			switch (objRec.recognized())
 			{
 			case 'b': recognizedBranch();

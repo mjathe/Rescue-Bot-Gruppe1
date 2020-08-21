@@ -1,6 +1,6 @@
 #pragma once
 #include "SensorController.h"
-#include "EngineController.h"
+#include "MotorControl.h"
 
 class Alignment
 {
@@ -18,7 +18,7 @@ public:
 	}
 	void Alignment::adjustAlignment(int alignmentIsNeed)
 	{
-		EngineController engineCont;
+		MotorControl engineCont;
 		engineCont.rotation(differenceAlignment(alignmentIsNeed));
 	}
 

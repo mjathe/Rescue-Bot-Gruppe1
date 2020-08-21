@@ -14,16 +14,16 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)AutoMode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MainControl.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Robot_Test1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)Alignment.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AudioNavigation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DriveMode.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)EngineController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MotorControl.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ObjectDetection.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)ObjectRecognition.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ObstacleDetection.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Sensorcontroller.h" />
   </ItemGroup>
 </Project>

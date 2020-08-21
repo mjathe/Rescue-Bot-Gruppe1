@@ -31,16 +31,16 @@ private:
 	int obstacle[2];
 
 public:
-	int* readAudioSensors();
+	int* checkForAudioSignals();
 	float compass();
 	float gyroscope();
 	float acceleration();
-	int* checkUltrasonicSensors();
+	int* checkForObjects();
 	int checkWater();
 	char cameraMeasurement();
 
 };
-char* readSensors(int freqTow)
+char* readSensorsAudio(int freqTow)
 {	
 	Audio Aud;
 	char temp[9];
@@ -82,7 +82,7 @@ float readGyroscope(float wert1, float wert2, float wert3)
 {
 	return wert1, wert2, wert3;
 }
-	 int* SensorController::readAudioSensors()
+	 int* SensorController::checkForAudioSignals()
 	{
 	//AudioOne{1,1,1,0,0,0,0,0,1} northwest
 	//AudioTwo{1,1,1,0,0,0,0,1,0}northeast
@@ -158,7 +158,7 @@ float readGyroscope(float wert1, float wert2, float wert3)
 	}
 		
 
-	int* SensorController::checkUltrasonicSensors()
+	int* SensorController::checkForObjects()
 	{		
 		int ultrasonicVL = readUltrasonic(ultrasonicPin1);
 		int ultrasonicVR = readUltrasonic(ultrasonicPin2);

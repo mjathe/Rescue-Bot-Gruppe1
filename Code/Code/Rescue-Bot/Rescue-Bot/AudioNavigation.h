@@ -23,7 +23,7 @@ public:
             size_t t = 4;
         for (size_t i = 0; i < 4; i++)
         {
-            audioData[i] = sensCont.readAudioSensors()[i];
+            audioData[i] = sensCont.checkForAudioSignals()[i];
         }
 
 
