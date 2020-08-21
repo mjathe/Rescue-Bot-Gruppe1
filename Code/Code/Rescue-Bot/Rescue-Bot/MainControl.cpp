@@ -1,20 +1,17 @@
-#include "ObjectDetection.h"
-#include <Windows.h>
-class MainControl
+#include "MainControl.hpp"
+
+void MainControl::mainloop()
 {
-	MainControl()
+	ObjectDetection objDec;
+	int buttonOperator = false;
+
+
+	if (operator == true)
 	{
-		ObjectDetection objDec;
-		int buttonOperator = false;
 
-
-		if (operator == true)
-		{
-
-			activateCamera();
-			displayVideo();
-				//funk
-				talkToPerson();
-		}
+		activateCamera();
+		displayVideo();
+		//funk
+		talkToPerson();
 	}
-};
+}

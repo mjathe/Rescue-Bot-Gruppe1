@@ -13,5 +13,5 @@ void AutoMode::startAutoMode()
 {
 	ObjectDetection objDec;
 
-	objDec.detectObject();
+ 	objDec.detectObject();
 }

@@ -1,15 +1,13 @@
-class Alignment
+#include "Alignment.hpp"
+int Alignment::differenceAlignment(int alignmentToAdjust)
 {
-
-#include "Sensorcontroller.cpp"
-
-#include "EngineController.cpp"
-private:
-
-public : 
-	int differencealignment(int alignmenttoadjust)
-	{
-		Sensorcontroller sensor;
-		int currentalignmentOnMap =  sensor.
-	}
-};
+	SensorController  sensCont;
+	int currentalignmentOnMap = sensCont.compass();
+	int difference = alignmentToAdjust - currentalignmentOnMap;
+	return difference;
+}
+void Alignment::adjustAlignment(int alignmentIsNeed)
+{
+	MotorControl engineCont;
+	engineCont.rotation(differenceAlignment(alignmentIsNeed));
+}

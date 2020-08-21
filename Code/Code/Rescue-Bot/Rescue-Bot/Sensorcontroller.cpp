@@ -1,96 +1,139 @@
-#include <iostream>
-
-using namespace std;
-
-float x1, y1, z1;	//Gyroscope
-float x2, y2, z2;	//compass
-float x3, y3, z3;	//acceleration
-float orientationToNorth;
-float orientation;
-int ultrasonicVL, ultrasonicVR, ultrasonicHL, ultrasonicHR;
-
-
-bool[] audioSignals[9];
-bool[] audiData[4];
-bool water;
-bool[] obstacle[4];
-
-
-
-public bool[] readAudioSensors()
+#include "Sensorcontroller.hpp"
+char* readSensorsAudio(int freqTow)
 {
-//AudioOne{1,1,1,0,0,0,0,0,1} northwest
-//AudioTwo{1,1,1,0,0,0,0,1,0}northeast
-//AudioThree{1,1,1,0,0,0,0,1,1} northeast
-//Audiofour{1,1,1,0,0,0,1,0,0} Southeast shortway
-    for ( i=0; i< 9; i++)
-    {
-      audioSignals[i] = readSensor(microfone)
-      sleep(100) // zeit zwischen den bits
-    }
-    for(i= 0; i<3;i++)
-    {
-      if(audioSignals.subArray[0,5] == new {1,1,1,0,0,0})
-        {
-         switch(audioSignals.subArray[6,8]);
-         	case {001}: audioData[0]  = true;
-        		break;
-        	case {010}: audiData[1] = true;
-         		break;
-         	case {011}: audioData[2]  = true;
-        		break;
-         	case {100}: audiData[3] = true;
-         		break;
-        }
+	Audio Aud;
+	char temp[9];
+	memcpy((char*)Aud.getSensorarray(/*freqTow*/).c_str(), (char*)temp, 9);
+	/*for (size_t i = 0; i < 9; i++) // problem
+	{
+		temp[i] = Aud.getSensorarray()[i];
+	}*/
 
-        else
-        {
-         exeption"fehlerhaftes Signal";
-        }
-        return audiData;
-      }
 
-public float gyroscope(orientation, x1, y1, z1)
+	return 	temp;
+}
+int readWater(int wert)
 {
+	return wert;
+}
+int readUltrasonic(int wert)
+{
+	Ultraa Ula;
+	Ultrab Ulb;
+	int temp = 0;
+	switch (wert)
+	{
+	case 29:  temp = Ula.getSensor();
+		break;
+	case 27: temp = Ulb.getSensor();
+		break;
+	default: temp = 0;
+		break;
+	}
 
-	float orientation = readGyroscope(x1, y1, z1);
+	return  temp;
+}
+float readMagneticField(float wert1, float wert2, float wert3)
+{
+	return wert1, wert2, wert3;
+}
+float readGyroscope(float wert1, float wert2, float wert3)
+{
+	return wert1, wert2, wert3;
+}
+int* SensorController::checkForAudioSignals()
+{
+	//AudioOne{1,1,1,0,0,0,0,0,1} northwest
+	//AudioTwo{1,1,1,0,0,0,0,1,0}northeast
+	//AudioThree{1,1,1,0,0,0,0,1,1} northeast
+	//Audiofour{1,1,1,0,0,0,1,0,0} Southeast shortway
+	char audioSignals[9];
+	for (size_t i = 0; i < 4; i++)
+	{
+		memcpy(readSensorsAudio(freqTow), audioSignals, 9);
+		/* for (size_t i = 0; i < 9; i++)
+		 {
+			 audioSignals[i] = readSensors(freqTow)[i];
+		 }
+		 */
+		if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9) == 0)
+		{
+			audioData[0] = true;
+		}
+		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0','1', '0' }, 9) == 0)
+		{
+			audioData[1] = true;
+		}
+		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0', '1', '1' }, 9) == 0)
+		{
+			audioData[2] = true;
+		}
+		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '1', '0', '0' }, 9) == 0)
+		{
+			audioData[3] = true;
+		}
+		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '1', '1', '0' }, 9) == 0)
+		{
+			//no signal 
+
+		}
+		else
+		{
+			//auch fehler
+		}
+	}
+	/*
+	if (audioSignals{1, 1, 1, 0, 0, 0, 0, 0, 1} || audioSignals{1, 1, 1, 0, 0, 0, 0, 1, 0} || audioSignals{1, 1, 1, 0, 0, 0, 0, 1, 1} || audioSignals{1, 1, 1, 0, 0, 0, 1, 0, 0})
+	{
+		switch (audioSignals)
+		{
+		case {1, 1, 1, 0, 0, 0, 0, 0, 1}: audioData[0] = true;
+			break;
+		case {1, 1, 1, 0, 0, 0, 0, 1, 0}: audioData[1] = true;
+			break;
+		case {1, 1, 1, 0, 0, 0, 0, 1, 1}: audioData[2] = true;
+			break;
+		case {1, 1, 1, 0, 0, 0, 1, 0, 0}: audioData[3] = true;
+			break;
+
+	}}*/
+
+
+	return audioData;
+}
+
+float SensorController::gyroscope()
+{
+	orientation = readGyroscope(x1, y1, z1);
+
 	return orientation;
-
 }
 
-public float compass(orientationToNorth, x2, y2, z2)
+float SensorController::compass()
 {
+	orientationToNorth = readMagneticField(x2, y2, z2);
 
-    float orientationToNorth = readMagneticField(x2, y2, z2);
-    return orientationToNorth;
-
-}
-
-public float acceleration(speed, x3, y3, z3)
-{
-
-	float speed = readAcceleration(x3, y3, z3);
-	return speed;
-
+	return orientationToNorth;
 }
 
 
-public int checkUltrasonicsensors(ultrasonicVL, ultrasonicVR, ultrasonicHL, ultrasonicHR, 30, 29, 28, 27, 26, 25, 24, 23) 
+int* SensorController::checkForObjects()
 {
+	int ultrasonicVL = readUltrasonic(ultrasonicPin1);
+	int ultrasonicVR = readUltrasonic(ultrasonicPin2);
 
-
-	int ultrasonicVL = readDigitalValue(29);
-	int ultrasonicVR = readDigitalValue(27);
-	int ultrasonicHL = readDigitalValue(25);
-	int ultrasonicHR = readDigitalValue(23);
-
-
-return {SensorRead(ultrasonicVL),SensorRead(ultrasonicVR),SensorRead(ultrasonicHL),SensorRead(ultrasonicHR)};
+	return new int[2]{ ultrasonicVL,ultrasonicVR };
 }
 
-public int checkwater(water, 20) 
+int SensorController::checkWater()
 {
-int water = readWater(20);
+	int water = readWater(watersens);
 
-return water;
+	return water;
+}
+
+char SensorController::cameraMeasurement()
+{
+	char msg = 'n';
+	return msg;
 }
