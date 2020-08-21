@@ -7,6 +7,8 @@ Write your code in this editor and press "Run" button to compile and execute it.
 *******************************************************************************/
 
 #include <iostream>
+#include<string>
+
 
 using namespace std;
 
@@ -144,7 +146,8 @@ int* Testground::location(){
 }
 int main()
 {
-    cout<<"Hello World";
-
+    Testground Test;
+    int *a = Test.location();
+    cout<<"Position:\n" << a[0] << " " << a[1];
     return 0;
 }
