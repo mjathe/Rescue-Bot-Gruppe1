@@ -55,8 +55,24 @@ class Testground {
         char move_west();
         char move_turn();
         int* location();
+        char currendlook();
 };
-
+char Testground::currendlook(){
+        switch(orientation){
+        case 'N':
+        return map[position[0]-1][position[1]];
+        break;
+        case 'S':
+        return map[position[0]+1][position[1]];
+        break;
+        case 'E':
+        return map[position[0]][position[1+1]];
+        break;
+        case 'W':
+        return map[position[0]][position[1]-1];
+        break;
+    }
+}        
 char Testground::move_north(){
     if (map[position[0]-1][position[1]] != 'R'){
         position[0] == position[0]-1;
