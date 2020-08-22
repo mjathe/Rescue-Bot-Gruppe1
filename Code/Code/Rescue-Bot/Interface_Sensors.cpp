@@ -147,8 +147,14 @@ class Audio: public Sensorarray {
 int main()
 {
     Audio Aud;
+    Ultraa Ula;
+    Ultrab Ulb;
+    Wasser Was;
     Aud.setturm(2);
-    cout<<"Turmid:\n" << Aud.getSensorarray();
+    cout<<"Turmid: " << Aud.getSensorarray();
+    cout<<"\nU1: " << Ula.getSensor();
+    cout<<"\nU2: " << Ulb.getSensor();
+    cout<<"\nW1: " << Was.getSensor();
     return 0;
 }
 */
