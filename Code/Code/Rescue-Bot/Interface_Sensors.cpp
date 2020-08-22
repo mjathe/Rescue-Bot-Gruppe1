@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include "testground"
 using namespace std;
-char identify = 'R';
+char identify;
 int pos[3] ={28,3};
+Testground Test;
 class Sensor {
     public:
         virtual int getSensor() = 0;
@@ -19,8 +21,9 @@ class Sensorarray {
 class Ultraa: public Sensor {
     public:
         int getSensor(){
-            cout << "Bitte geben Sie R/G/O/W ein!" << endl;
-            cin >> identify;
+            //cout << "Bitte geben Sie R/G/O/W ein!" << endl;
+            //cin >> identify;
+            identify = Test.currendlook();
             int data = 0;
             switch(identify){
                 case 'R':
@@ -48,8 +51,9 @@ class Ultraa: public Sensor {
 class Ultrab: public Sensor {
     public:
         int getSensor(){
-            cout << "Bitte geben Sie R/G/O/W ein!" << endl;
-            cin >> identify;
+            //cout << "Bitte geben Sie R/G/O/W ein!" << endl;
+            //cin >> identify;
+            identify = Test.currendlook();
             int data = 0;
             switch(identify){
                 case 'R':
@@ -77,8 +81,9 @@ class Ultrab: public Sensor {
 class Wasser: public Sensor {
     public:
         int getSensor(){
-            cout << "Bitte geben Sie R/G/O/W ein!" << endl;
-            cin >> identify;
+            //cout << "Bitte geben Sie R/G/O/W ein!" << endl;
+            //cin >> identify;
+            identify = Test.currendlook();
             int data = 0;
             switch(identify){
                 case 'R':
@@ -106,12 +111,16 @@ class Wasser: public Sensor {
 class Audio: public Sensorarray {
     public:
         string getSensorarray(){
+            //Testground Test;
+            int *x = Test.location();
+            pos[0] = x[0];
+            pos[1] = x[1];
             //cout << "Bitte geben Sie die Turmnummer ein!" << endl;
             //cin >> turm;
-            cout << "Bitte geben Sie L ein!" << endl;
-            cin >> pos[0];
-            cout << "Bitte geben Sie B ein!" << endl;
-            cin >> pos[1];
+            //cout << "Bitte geben Sie L ein!" << endl;
+            //cin >> pos[0];
+            //cout << "Bitte geben Sie B ein!" << endl;
+            //cin >> pos[1];
             string a = "1,1,1,0,0,0,1,1,0";
             if ((pos[0] == 2 || pos[0] == 3 || pos[0] == 4) && turm == 1){
                 a = "1,1,1,0,0,0,0,0,1";
@@ -134,4 +143,12 @@ class Audio: public Sensorarray {
             }
         }
 };
-
+/*
+int main()
+{
+    Audio Aud;
+    Aud.setturm(2);
+    cout<<"Turmid:\n" << Aud.getSensorarray();
+    return 0;
+}
+*/
