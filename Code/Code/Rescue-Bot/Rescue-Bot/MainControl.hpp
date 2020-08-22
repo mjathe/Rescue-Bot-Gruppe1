@@ -1,9 +1,12 @@
 #pragma once
 #include "ObjectDetection.hpp"
+#include "AudioNavigation.hpp"
 #include <Windows.h>
 #include <conio.h>
 class MainControl
 {
+private: 
+	AudioNavigation auNav;
 public:
 	void mainloop();
 
@@ -16,6 +19,13 @@ void MainControl::mainloop()
 	int buttonOperator = false;
 	while (_getch() != 32)
 	{
-		objDec.detectObject();
+		if (objDec.detectObject() == true)
+		{
+
+		}
+		else
+		{
+			auNav.Navigate();
+		}
 	}
 }

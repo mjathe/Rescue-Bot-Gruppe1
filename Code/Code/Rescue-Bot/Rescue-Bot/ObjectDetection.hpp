@@ -12,15 +12,15 @@ private:
 
 
 public:
-	void detectObject();
+	bool detectObject();
 };
 
-	void ObjectDetection::detectObject()
+	bool ObjectDetection::detectObject()
 	{
 		SensorController senContr;
 		DriveMode drvMode;
 		AudioNavigation audiNav;
-
+		cout << "checkWater";
 		if (senContr.checkWater() == 1)
 		{
 			drvMode.botDrivesOverWater();
@@ -29,8 +29,10 @@ public:
 		{
 			drvMode.botDrivesOverLand();
 		}
-
-		if (senContr.checkForObjects()[0] == 1 || senContr.checkForObjects()[1] == 1)
+		cout << "\nObject Detection";
+		char objects[2];
+		memcpy((char*)senContr.checkForObjects(), (char*)objects, 2);
+ 		if (objects[0] == 1 || objects[1] == 1)
 		{
 			ObstacleDetection objRec;
 			switch (objRec.recognized())
@@ -43,8 +45,13 @@ public:
 			default:
 				break;
 			}
+			return true;
 		}
-
+		else
+		{
+			return false;
+		}
+		
 	}
 	void ObjectDetection::recognizedBranch()
 	{

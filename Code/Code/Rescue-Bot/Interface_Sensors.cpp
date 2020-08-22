@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "testground"
+#include "testground.cpp"
 using namespace std;
 char identify;
 int pos[3] ={28,3};

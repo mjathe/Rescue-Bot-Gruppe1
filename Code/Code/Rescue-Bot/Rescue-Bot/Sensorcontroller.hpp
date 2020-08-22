@@ -26,7 +26,7 @@ private:
 	int freqTow = 0; //frequenz für türme
 
 	
-	int audioData[4];
+
 	bool water;
 	int obstacle[2];
 
@@ -34,10 +34,12 @@ private:
 	int readUltrasonic(int);
 	float readMagneticField(float , float , float );
 	float readGyroscope(float, float, float);
-	Audio Aud;
+
+	Ultraa Ula;
+	Ultrab Ulb;
 
 public:
-	int* checkForAudioSignals();
+	char* checkForAudioSignals();
 	float compass();
 	float gyroscope();
 	float acceleration();
@@ -53,8 +55,7 @@ int SensorController::readWater(int wert)
 }
 int SensorController::readUltrasonic(int wert)
 {
-	Ultraa Ula;
-	Ultrab Ulb;
+
 	int temp = 0;
 	switch (wert)
 	{
@@ -76,40 +77,40 @@ float SensorController::readGyroscope(float wert1, float wert2, float wert3)
 {
 	return wert1, wert2, wert3;
 }
-int* SensorController::checkForAudioSignals()
+char* SensorController::checkForAudioSignals()
 {
+	Audio Aud;
+	char audioData[4] = { '0','0','0','0' };
 	//AudioOne{1,1,1,0,0,0,0,0,1} northwest
 	//AudioTwo{1,1,1,0,0,0,0,1,0}northeast
 	//AudioThree{1,1,1,0,0,0,0,1,1} northeast
 	//Audiofour{1,1,1,0,0,0,1,0,0} Southeast shortway
-	char audioSignals[9];
-	for (size_t i = 0; i < 4; i++)
-	{
-		memcpy((char*)Aud.getSensorarray(freqTow).c_str(), audioSignals, 9);
-		/* for (size_t i = 0; i < 9; i++)
-		 {
-			 audioSignals[i] = readSensors(freqTow)[i];
-		 }
-		 */
-		if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0', '0', '1' }, 9) == 0)
+	for (size_t i = 1; i < 5; i++)
+	{	
+		Aud.setturm(i);
+		string audioSigna = "";
+		//memcpy((char*)Aud.getSensorarray().c_str(), audioSignals, 9);
+		 audioSigna = Aud.getSensorarray().c_str();
+		cout << audioSigna;	 
+		if (memcmp(audioSigna.c_str(),"1,1,1,0,0,0,0,0,1", 9) == 0)
 		{
-			audioData[0] = true;
+			audioData[0] = '1';
 		}
-		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0','1', '0' }, 9) == 0)
+		else if (memcmp (audioSigna.c_str(), "1,1,1,0,0,0,0,1,0", 9) == 0)
 		{
-			audioData[1] = true;
+			audioData[1] = '1';
 		}
-		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '0', '1', '1' }, 9) == 0)
+		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,0,1,1", 9) == 0)
 		{
-			audioData[2] = true;
+			audioData[2] = '1';
 		}
-		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '1', '0', '0' }, 9) == 0)
+		else if (memcmp(audioSigna.c_str(),"1,1,1,0,0,0,1,0,0", 9) == 0)
 		{
-			audioData[3] = true;
+			audioData[3] = '1';
 		}
-		else if (memcmp(audioSignals, new char[9]{ '1', '1', '1', '0', '0', '0', '1', '1', '0' }, 9) == 0)
+		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,1,1,0", 9) == 0)
 		{
-			cout << "fehler!";
+			cout << "fehler code: c123!";
 
 		}
 		else
@@ -133,7 +134,8 @@ int* SensorController::checkForAudioSignals()
 
 	}}*/
 
-
+	cout << "\n";
+	cout << audioData;
 	return audioData;
 }
 
@@ -146,7 +148,7 @@ float SensorController::gyroscope()
 
 float SensorController::compass()
 {
-	orientationToNorth = readMagneticField(x2, y2, z2);
+	orientationToNorth = readMagneticField(10, 20, 30);
 
 	return orientationToNorth;
 }
@@ -162,9 +164,10 @@ int* SensorController::checkForObjects()
 
 int SensorController::checkWater()
 {
-	int water = readWater(watersens);
+	Wasser water;
+	int waterdata = water.getSensor();
 
-	return water;
+	return waterdata;
 }
 
 char SensorController::cameraMeasurement()

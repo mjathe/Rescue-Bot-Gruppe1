@@ -76,7 +76,8 @@ void MotorControl::rotation(int angle)
 	if (angle <= 180)
 	{
 		int secondsToRotate = angle / degreePerSecond;
-		for (size_t i = secondsToRotate; i > 0; i--)
+		size_t i = secondsToRotate;
+		for (i; i > 0; i--)
 		{
 			engine(100, 0);
 			delay(1000);    //spezifisch für arduino 

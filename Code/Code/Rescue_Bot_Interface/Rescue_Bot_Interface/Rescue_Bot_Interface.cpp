@@ -6,6 +6,6 @@ using namespace std;
 int main()
 {
 	MainControl autMo;
-	autMo.mainloop();
+ 	autMo.mainloop();
 
 };
