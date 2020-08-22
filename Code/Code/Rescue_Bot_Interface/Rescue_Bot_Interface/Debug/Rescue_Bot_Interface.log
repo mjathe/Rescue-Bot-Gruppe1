@@ -1,7 +1,4 @@
 ﻿  Rescue_Bot_Interface.cpp
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(45,8): error C2259: "Audio": Abstrakte Klasse kann nicht erstellt werden.
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Interface_Sensors.cpp(103): message : Siehe Deklaration von "Audio"
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(45,8): message : aufgrund folgender Member:
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.h(45,8): message : "std::string Sensorarray::getSensorarray(void)": ist abstrakt
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Interface_Sensors.cpp(13): message : Siehe Deklaration von "Sensorarray::getSensorarray"
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\Alignment.h(15,29): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.hpp(88,43): error C2660: "Audio::getSensorarray": Funktion akzeptiert keine 1 Argumente
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Interface_Sensors.cpp(108,16): message : Siehe Deklaration von "Audio::getSensorarray"
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\Alignment.hpp(17,28): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
