@@ -69,7 +69,7 @@ char Testground::currendlook(){
         return map[position[0]+1][position[1]];
         break;
         case 'E':
-        return map[position[0]][position[1+1]];
+        return map[position[0]][position[1]+1];
         break;
         case 'W':
         return map[position[0]][position[1]-1];
