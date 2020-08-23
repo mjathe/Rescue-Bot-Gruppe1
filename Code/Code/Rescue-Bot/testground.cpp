@@ -9,15 +9,11 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <iostream>
 #include<string>
 
-
 using namespace std;
-
-class Testground {
-    public:
-        char orientation = 'W';
-        int position[2] = {28,2};
-        char turn = 'R';
-        char map[30][30] = {
+char orientation = 'E';
+int position[2] = {28,1};
+char turn;
+char map[30][30] = {
         {'R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R'},
         {'R','G','G','G','R','R','R','R','R','G','G','G','G','R','R','R','G','G','G','G','G','G','G','G','G','G','G','G','G','R'},
         {'R','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','G','R'},
@@ -48,7 +44,10 @@ class Testground {
         {'R','G','G','G','G','R','R','R','R','R','R','W','W','W','W','W','W','W','W','W','W','W','R','R','R','R','G','G','R','R'},
         {'R','G','G','G','G','R','R','R','R','R','R','G','W','W','O','W','W','W','W','W','W','R','R','R','R','R','R','G','R','R'},
         {'R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R'},
-        };
+};
+
+class Testground {
+    public:
         char move_north();
         char move_south();
         char move_east();
@@ -56,6 +55,10 @@ class Testground {
         char move_turn();
         int* location();
         char currendlook();
+        void setturn(char u) {
+        turn = u;
+        }
+        char turn;
 };
 char Testground::currendlook(){
         switch(orientation){
@@ -75,7 +78,7 @@ char Testground::currendlook(){
 }        
 char Testground::move_north(){
     if (map[position[0]-1][position[1]] != 'R'){
-        position[0] == position[0]-1;
+        position[0] = position[0]-1;
         return map[position[0]-1][position[1]];
     } 
     else{
@@ -84,7 +87,7 @@ char Testground::move_north(){
 }
 char Testground::move_south(){
     if (map[position[0]+1][position[1]] != 'R'){
-        position[0] == position[0]+1;
+        position[0] = position[0]+1;
         return map[position[0]+1][position[1]];
     } 
     else{
@@ -93,7 +96,7 @@ char Testground::move_south(){
 }
 char Testground::move_east(){
     if (map[position[0]][position[1]+1] != 'R'){
-        position[1] == position[1]+1;
+        position[1] = position[1]+1;
         return map[position[0]][position[1]+1];
     } 
     else{
@@ -102,7 +105,7 @@ char Testground::move_east(){
 }
 char Testground::move_west(){
     if (map[position[0]][position[1]-1] != 'R'){
-        position[1] == position[1]-1;
+        position[1] = position[1]-1;
         return map[position[0]][position[1]-1];
     } 
     else{
