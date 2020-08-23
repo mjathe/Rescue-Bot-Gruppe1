@@ -3,7 +3,7 @@
 #include "testground.cpp"
 using namespace std;
 char identify;
-int pos[3] ={28,3};
+int pos[3] ={28,1};
 Testground Test;
 class Sensor {
     public:
@@ -122,19 +122,19 @@ class Audio: public Sensorarray {
             //cout << "Bitte geben Sie B ein!" << endl;
             //cin >> pos[1];
             string a = "1,1,1,0,0,0,1,1,0";
-            if ((pos[0] == 2 || pos[0] == 3 || pos[0] == 4) && turm == 1){
+            if ((pos[1] == 1 || pos[1] == 2 || pos[1] == 3) && turm == 1){
                 a = "1,1,1,0,0,0,0,0,1";
                 return a;
             }
-            else if ((pos[1] == 2 || pos[1] == 3 || pos[1] == 4) && turm == 2){
+            else if ((pos[0] == 1 || pos[0] == 2 || pos[0] == 3) && turm == 2){
                 a = "1,1,1,0,0,0,0,1,0";
                 return a;
             }
-            else if ((pos[0] == 27 || pos[0] == 28 || pos[0] == 29) && turm == 3){
+            else if ((pos[1] == 27 || pos[1] == 28 || pos[1] == 29) && turm == 3){
                 a = "1,1,1,0,0,0,0,1,1";
                 return a;
             }
-            else if ((pos[1] == 27 || pos[1] == 28 || pos[1] == 29) && turm == 4){
+            else if ((pos[0] == 27 || pos[0] == 28 || pos[0] == 29) && turm == 4){
                 a = "1,1,1,0,0,0,1,0,0";
                 return a;
             }
@@ -145,16 +145,19 @@ class Audio: public Sensorarray {
 };
 /*
 int main()
+int main()
 {
     Audio Aud;
     Ultraa Ula;
     Ultrab Ulb;
     Wasser Was;
     Aud.setturm(2);
+    Test.setturn('L'); //to trun the bot 90°
     cout<<"Turmid: " << Aud.getSensorarray();
     cout<<"\nU1: " << Ula.getSensor();
     cout<<"\nU2: " << Ulb.getSensor();
     cout<<"\nW1: " << Was.getSensor();
+    cout<<"\nMove: " << Test.move_east();
     return 0;
 }
 */
