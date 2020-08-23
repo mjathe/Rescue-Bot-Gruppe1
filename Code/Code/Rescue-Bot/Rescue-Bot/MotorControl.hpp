@@ -54,6 +54,13 @@ void MotorControl::engine(int engine1, int engine2)		//Engine1 = right Engine2 =
 			analogWrite(enginePin2, 255);
 		}
 	}
+	cout << "EN1(";
+	cout << engine1;
+	cout << ")";
+	cout << "EN2(";
+	cout << engine2;
+	cout << ")";
+	cout  << endl;
 }
 void MotorControl::acclerator(int direction)
 {
@@ -73,6 +80,8 @@ void MotorControl::acclerator(int direction)
 
 void MotorControl::rotation(int angle)
 {
+
+	angle = abs(angle);
 	if (angle <= 180)
 	{
 		int secondsToRotate = angle / degreePerSecond;

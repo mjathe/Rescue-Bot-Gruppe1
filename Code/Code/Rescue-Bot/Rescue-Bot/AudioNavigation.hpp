@@ -14,6 +14,7 @@ public:
 #include "AudioNavigation.hpp"
 void  AudioNavigation::Navigate()
 {
+    cout << "Scanning for Audio" << endl;
     SensorController sensCont; Alignment ali;
     //{ 1,0,0,0}; start NACH TURM 1
     //{ 1, 0, 0, 1 }; start nach turm4

@@ -29,7 +29,7 @@ public:
 		{
 			drvMode.botDrivesOverLand();
 		}
-		cout << "\nObject Detection";
+		cout << "\nObject Detection: ";
 		char objects[2];
 		memcpy((char*)senContr.checkForObjects(), (char*)objects, 2);
  		if (objects[0] == 1 || objects[1] == 1)
@@ -37,18 +37,20 @@ public:
 			ObstacleDetection objRec;
 			switch (objRec.recognized())
 			{
-			case 'b': recognizedBranch();
+			case 'b': cout << "\n\nknown obect found: branch"; recognizedBranch();
 				break;
-			case 'p': recognizedPerson();
+			case 'p':cout << "\n\nknown obect found: person"; recognizedPerson();
 				break;
-			case 'n': audiNav.Navigate();
+			case 'n':cout << "\n\nno known obect found";  audiNav.Navigate();
 			default:
 				break;
 			}
+			cout << "\nobject recognition with positive result\n\n";
 			return true;
 		}
 		else
 		{
+			cout << "\nobject recognition with negative result\n\n";
 			return false;
 		}
 		

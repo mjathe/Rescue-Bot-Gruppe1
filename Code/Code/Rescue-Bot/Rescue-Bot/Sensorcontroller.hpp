@@ -89,33 +89,33 @@ char* SensorController::checkForAudioSignals()
 	{	
 		Aud.setturm(i);
 		string audioSigna = "";
-		//memcpy((char*)Aud.getSensorarray().c_str(), audioSignals, 9);
 		 audioSigna = Aud.getSensorarray().c_str();
-		cout << audioSigna;	 
-		if (memcmp(audioSigna.c_str(),"1,1,1,0,0,0,0,0,1", 9) == 0)
+		//cout << audioSigna;	
+
+		if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,0,0,1", 15) == 0)
 		{
 			audioData[0] = '1';
 		}
-		else if (memcmp (audioSigna.c_str(), "1,1,1,0,0,0,0,1,0", 9) == 0)
+		else if (memcmp (audioSigna.c_str(), "1,1,1,0,0,0,0,1,0", 15) == 0)
 		{
 			audioData[1] = '1';
 		}
-		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,0,1,1", 9) == 0)
+		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,0,1,1", 15) == 0)
 		{
 			audioData[2] = '1';
 		}
-		else if (memcmp(audioSigna.c_str(),"1,1,1,0,0,0,1,0,0", 9) == 0)
+		else if (memcmp(audioSigna.c_str(),"1,1,1,0,0,0,1,0,0", 15) == 0)
 		{
 			audioData[3] = '1';
 		}
-		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,1,1,0", 9) == 0)
+		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,1,1,0", 15) == 0)
 		{
-			cout << "fehler code: c123!";
+			cout << "fehler: Keine Audio Codierung empfangen!";
 
 		}
 		else
 		{
-			cout << "fehler!";
+			cout << "Allgemeiner fehler in der AudioNavigation!";
 		}
 	}
 	/*
@@ -135,7 +135,7 @@ char* SensorController::checkForAudioSignals()
 	}}*/
 
 	cout << "\n";
-	cout << audioData;
+	cout << audioData << endl;
 	return audioData;
 }
 

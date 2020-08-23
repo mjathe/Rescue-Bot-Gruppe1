@@ -10,7 +10,6 @@ public:
 	void adjustAlignment(int alignmentIsNeed);
 };
 
-#include "Alignment.hpp"
 int Alignment::differenceAlignment(int alignmentToAdjust)
 {
 	SensorController  sensCont;
@@ -20,6 +19,8 @@ int Alignment::differenceAlignment(int alignmentToAdjust)
 }
 void Alignment::adjustAlignment(int alignmentIsNeed)
 {
+	cout << "Alignment Start" << endl; 
 	MotorControl engineCont;
 	engineCont.rotation(differenceAlignment(alignmentIsNeed));
+	cout << "Alignment finished" << endl;
 }
