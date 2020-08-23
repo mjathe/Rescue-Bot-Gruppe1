@@ -53,6 +53,7 @@ class Testground {
         char move_east();
         char move_west();
         char move_turn();
+        char move_straight();
         int* location();
         char currendlook();
         void setturn(char u) {
@@ -75,7 +76,46 @@ char Testground::currendlook(){
         return map[position[0]][position[1]-1];
         break;
     }
-}        
+}      
+char Testground::move_straight(){
+        switch(orientation){
+        case 'N':
+        if (map[position[0]-1][position[1]] != 'R'){
+        position[0] = position[0]-1;
+        return map[position[0]-1][position[1]];
+        } 
+        else{
+            return '!';
+        }
+        break;
+        case 'S':
+        if (map[position[0]+1][position[1]] != 'R'){
+        position[0] = position[0]+1;
+        return map[position[0]+1][position[1]];
+        } 
+        else{
+            return '!';
+        }
+        break;
+        case 'E':
+        if (map[position[0]][position[1]+1] != 'R'){
+        position[1] = position[1]+1;
+        return map[position[0]][position[1]+1];
+        } 
+        else{
+            return '!';
+        }
+        break;
+        case 'W':
+        if (map[position[0]][position[1]-1] != 'R'){
+        position[1] = position[1]-1;
+        return map[position[0]][position[1]-1];
+        } 
+        else{
+            return '!';
+        }
+        }
+}   
 char Testground::move_north(){
     if (map[position[0]-1][position[1]] != 'R'){
         position[0] = position[0]-1;
@@ -116,9 +156,11 @@ char Testground::move_turn(){
     switch(orientation){
         case 'N':
         if(turn == 'R'){
+            orientation = 'E';
             return map[position[0]][position[1]+1];
         }
         else if(turn == 'L'){
+            orientation = 'W';
             return map[position[0]][position[1]-1];
         }
         else{
@@ -127,9 +169,11 @@ char Testground::move_turn(){
         break;
         case 'S':
         if(turn == 'R'){
+            orientation = 'W';
             return map[position[0]][position[1]-1];
         }
         else if(turn == 'L'){
+            orientation = 'E';
             return map[position[0]][position[1]+1];
         }
         else{
@@ -138,9 +182,11 @@ char Testground::move_turn(){
         break;
         case 'E':
         if(turn == 'R'){
+            orientation = 'S';
             return map[position[0]+1][position[1]];
         }
         else if(turn == 'L'){
+            orientation = 'N';
             return map[position[0]-1][position[1]];
         }
         else{
@@ -149,9 +195,11 @@ char Testground::move_turn(){
         break;
         case 'W':
         if(turn == 'R'){
+            orientation = 'N';
             return map[position[0]-1][position[1]];
         }
         else if(turn == 'L'){
+            orientation = 'S';
             return map[position[0]+1][position[1]];
         }
         else{
