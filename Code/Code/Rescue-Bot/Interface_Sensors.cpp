@@ -145,19 +145,21 @@ class Audio: public Sensorarray {
 };
 /*
 int main()
-int main()
 {
     Audio Aud;
     Ultraa Ula;
     Ultrab Ulb;
     Wasser Was;
     Aud.setturm(2);
-    Test.setturn('L'); //to trun the bot 90°
-    cout<<"Turmid: " << Aud.getSensorarray();
+    Test.setturn('L');
+    cout<<"\nLook: " << Test.currendlook();
+    cout<<"\nTurmid: " << Aud.getSensorarray();
     cout<<"\nU1: " << Ula.getSensor();
     cout<<"\nU2: " << Ulb.getSensor();
     cout<<"\nW1: " << Was.getSensor();
-    cout<<"\nMove: " << Test.move_east();
-    return 0;
+    cout<<"\nMove: " << Test.move_straight();
+    cout<<"\nMove: " << Test.move_turn();
+    Test.setturn('R');
+    cout<<"\nMove: " << Test.move_turn();
 }
 */
