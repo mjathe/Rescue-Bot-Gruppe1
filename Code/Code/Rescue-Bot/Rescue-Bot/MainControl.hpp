@@ -19,7 +19,7 @@ void MainControl::mainloop()
 {
 	ObjectDetection objDec;
 	int buttonOperator = false;
-	while (_getch() != 32)
+	while (GetAsyncKeyState(0x60) == 0)
 	 {
 		if (objDec.detectObject() == true)
 		{
@@ -32,4 +32,6 @@ void MainControl::mainloop()
 			moCo.acclerator(1);
 		}
 	}
+	cout << " Manual Modus";
+	cin;
 }
