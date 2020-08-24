@@ -5,6 +5,25 @@ using namespace std;
 char identify;
 int pos[3] ={28,1};
 Testground Test;
+
+//----------
+class SetOrientation{
+    public:
+        void setori(char r) {
+        ori = r;
+        Test.setorientation(r);
+      }
+        char ori;
+};
+//----------
+class Move{
+    public:
+        void movestraight();
+};
+void Move::movestraight(){
+    Test.move_straight();
+};
+//----------
 class Sensor {
     public:
         virtual int getSensor() = 0;
@@ -143,23 +162,23 @@ class Audio: public Sensorarray {
             }
         }
 };
+//-----------------
 /*
 int main()
 {
-    Audio Aud;
     Ultraa Ula;
     Ultrab Ulb;
     Wasser Was;
+    Audio Aud;
+    Move Mov;
+    SetOrientation SOR;
+    SOR.setori('E');
+    Mov.movestraight();
     Aud.setturm(2);
-    Test.setturn('L');
-    cout<<"\nLook: " << Test.currendlook();
     cout<<"\nTurmid: " << Aud.getSensorarray();
     cout<<"\nU1: " << Ula.getSensor();
     cout<<"\nU2: " << Ulb.getSensor();
     cout<<"\nW1: " << Was.getSensor();
-    cout<<"\nMove: " << Test.move_straight();
-    cout<<"\nMove: " << Test.move_turn();
-    Test.setturn('R');
-    cout<<"\nMove: " << Test.move_turn();
+    return 0;
 }
 */
