@@ -54,10 +54,10 @@ void MotorControl::engine(int engine1, int engine2)		//Engine1 = right Engine2 =
 			analogWrite(enginePin2, 255);
 		}
 	}
-	cout << "EN1(";
+	cout << "EN1/R(";
 	cout << engine1;
 	cout << ")";
-	cout << "EN2(";
+	cout << "EN2/L(";
 	cout << engine2;
 	cout << ")";
 	cout  << endl;
@@ -80,25 +80,25 @@ void MotorControl::acclerator(int direction)
 
 void MotorControl::rotation(int angle)
 {
-
-	angle = abs(angle);
-	if (angle <= 180)
+	int absangle = abs(angle);
+	if (absangle <= 180 || angle > 0)
 	{
-		int secondsToRotate = angle / degreePerSecond;
+		int secondsToRotate = absangle / degreePerSecond;
 		size_t i = secondsToRotate;
 		for (i; i > 0; i--)
 		{
-			engine(100, 0);
+
+			engine(200, 100);
 			delay(1000);    //spezifisch für arduino 
 		}
 		engine(0, 0);
 	}
-	else if (angle > 180)
+	else if (absangle > 180 || angle < 0)
 	{
-		int secondsToRotate = (360 - angle) / degreePerSecond;
+		int secondsToRotate = (360 - absangle) / degreePerSecond;
 		for (size_t i = secondsToRotate; i > 0; i--)
 		{
-			engine(0, 100);
+			engine(100, 200);
 			delay(1000);    //spezifisch für arduino 
 		}
 		engine(0, 0);
