@@ -37,6 +37,7 @@ private:
 
 	Ultraa Ula;
 	Ultrab Ulb;
+	Compass cmp;
 
 public:
 	char* checkForAudioSignals();
@@ -59,15 +60,13 @@ int SensorController::readUltrasonic(int wert)
 	int temp = 0;
 	switch (wert)
 	{
-	case 29:  temp = Ula.getSensor();
+	case 29:  return Ula.getSensor();
 		break;
-	case 27: temp = Ulb.getSensor();
+	case 27: return Ulb.getSensor();
 		break;
-	default: temp = 0;
+	default: return 0;
 		break;
 	}
-
-	return  temp;
 }
 float SensorController::readMagneticField(float wert1, float wert2, float wert3)
 {
@@ -148,7 +147,7 @@ float SensorController::gyroscope()
 
 float SensorController::compass()
 {
-	orientationToNorth = readMagneticField(10, 20, 30);
+	orientationToNorth = cmp.getCompass();
 
 	return orientationToNorth;
 }
@@ -156,10 +155,11 @@ float SensorController::compass()
 
 int* SensorController::checkForObjects()
 {
-	int ultrasonicVL = readUltrasonic(ultrasonicPin1);
-	int ultrasonicVR = readUltrasonic(ultrasonicPin2);
-
-	return new int[2]{ ultrasonicVL,ultrasonicVR };
+	int temp[2] = { 0, 0};
+	 temp[0] = readUltrasonic(ultrasonicPin1);
+	 temp[1] = readUltrasonic(ultrasonicPin2);
+	
+	 return temp;
 }
 
 int SensorController::checkWater()

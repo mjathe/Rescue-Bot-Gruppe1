@@ -34,6 +34,7 @@ MotorControl::MotorControl(DriveMode _drvMode)
 #include "MotorControl.hpp"
 void MotorControl::engine(int engine1, int engine2)		//Engine1 = right Engine2 = left
 {
+	cout << endl << Test.orientation << endl;
 	if (engine1 == 100)
 	{
 		Mov.movestraight(enginePin1,255, 255);
@@ -110,6 +111,9 @@ void MotorControl::acclerator(int direction)
 void setOrientation(int orientation)
 {
 	SetOrientation SOR;
+	cout << "--------------------------" << endl;
+	cout << orientation << endl;
+	cout << "--------------------------" << endl;
 	switch (orientation)
 	{
 	case 0:SOR.setori('N');

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "testground.cpp"
+#define PI 3.14159265
 using namespace std;
 char identify;
 int pos[3] ={28,1};
@@ -44,6 +45,25 @@ class Sensorarray {
          turm = t;
       }
         int turm;
+};
+class Compass{
+public: 
+    int getCompass()
+    {
+        switch (Test.orientation)
+        {
+        case'N': return 0;
+            break;
+        case'E':return 90;
+            break;
+        case'S':return 180;
+            break;
+        case'W':return 270;
+            break;
+        default:
+            break;
+        }
+    }
 };
 
 class Ultraa: public Sensor {
@@ -109,7 +129,6 @@ class Ultrab: public Sensor {
 class Wasser: public Sensor {
     public:
         int getSensor(){
-            //cout << "Bitte geben Sie R/G/O/W ein!" << endl;
             //cin >> identify;
             identify = Test.currendlook();
             int data = 0;

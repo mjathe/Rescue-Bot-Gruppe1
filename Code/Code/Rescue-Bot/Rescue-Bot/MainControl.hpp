@@ -28,39 +28,41 @@ void MainControl::mainloop()
 	while (GetAsyncKeyState(0x60) == 0)
 	 {
 		Sleep(1000);
-		//system("cls");
+		system("cls");
 		cout << "checkWater";
 		if (senContr.checkWater() == 1)
 		{
 			drvMode.botDrivesOverWater();
+			cout << "water" << endl;
 		}
 		else if (senContr.checkWater() != 1)
 		{
 			drvMode.botDrivesOverLand();
+			cout << "land" << endl;
 		}
-		char object[2] = {'0','0'};
-		memcpy(objDec.detectObject(), object, 2);
-		if (object[0] == '1')
-		{
-			moCo.acclerator(0);
-			ali.adjustAlignment(270);
-			moCo.acclerator(1);
-			Sleep(1000);
-			moCo.acclerator(0);
-			ali.adjustAlignment(90);
+		
+		bool object = false;
+		object = objDec.detectObject();
+		 if (object == true)
+			{
+				moCo.acclerator(0);
+				ali.adjustAlignment(senContr.compass() - 90);
+			/*	if (object[0] == '\x1' && object[1] == '\x1')
+				{
+					ali.adjustAlignment(senContr.compass() - 90);
+					moCo.acclerator(1);
+					Sleep(1000);
+					ali.adjustAlignment(senContr.compass() + 90);
+				}*/
+				moCo.acclerator(1);
+				Sleep(1000);
+				ali.adjustAlignment(senContr.compass() + 90);
+				moCo.acclerator(0);
 
-			
-		}
-		else if (object[0] == '1')
-		{
-			moCo.acclerator(0);
-			ali.adjustAlignment(90);
-			moCo.acclerator(1);
-			Sleep(1000);
-			moCo.acclerator(0);
-			ali.adjustAlignment(270);
-		}
-		else
+
+			}
+
+		if(object == false)
 		{
 			auNav.Navigate();
 			cout << "drive: ";
