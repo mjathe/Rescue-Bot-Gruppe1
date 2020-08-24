@@ -110,12 +110,12 @@ char* SensorController::checkForAudioSignals()
 		}
 		else if (memcmp(audioSigna.c_str(), "1,1,1,0,0,0,1,1,0", 15) == 0)
 		{
-			cout << "fehler: Keine Audio Codierung empfangen!";
+			//cout << "fehler: Keine Audio Codierung empfangen!";
 
 		}
 		else
 		{
-			cout << "Allgemeiner fehler in der AudioNavigation!";
+			//cout << "Allgemeiner fehler in der AudioNavigation!";
 		}
 	}
 	/*

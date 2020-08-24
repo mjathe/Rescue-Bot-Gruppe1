@@ -21,14 +21,16 @@ void MainControl::mainloop()
 	int buttonOperator = false;
 	while (GetAsyncKeyState(0x60) == 0)
 	 {
+		Sleep(1000);
+		system("cls");
 		if (objDec.detectObject() == true)
 		{
-
+			moCo.acclerator(0);
 		}
 		else
 		{
 			auNav.Navigate();
-			cout<<"drive: ";
+			cout << "drive: ";
 			moCo.acclerator(1);
 		}
 	}
