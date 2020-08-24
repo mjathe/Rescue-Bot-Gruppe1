@@ -33,12 +33,12 @@ void MainControl::mainloop()
 		if (senContr.checkWater() == 1)
 		{
 			drvMode.botDrivesOverWater();
-			cout << "water" << endl;
+			cout endl << "water" << endl;
 		}
 		else if (senContr.checkWater() != 1)
 		{
 			drvMode.botDrivesOverLand();
-			cout << "land" << endl;
+			cout endl<< "land" << endl;
 		}
 		
 		bool object = false;
