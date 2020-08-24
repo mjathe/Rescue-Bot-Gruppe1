@@ -18,17 +18,9 @@ public:
 	bool ObjectDetection::detectObject()
 	{
 		SensorController senContr;
-		DriveMode drvMode;
+
 		AudioNavigation audiNav;
-		cout << "checkWater";
-		if (senContr.checkWater() == 1)
-		{
-			drvMode.botDrivesOverWater();
-		}
-		else if (senContr.checkWater() != 1)
-		{
-			drvMode.botDrivesOverLand();
-		}
+
 		cout << "\nObject Detection: ";
 		char objects[2];
 		memcpy((char*)senContr.checkForObjects(), (char*)objects, 2);

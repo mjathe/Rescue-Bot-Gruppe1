@@ -3,17 +3,23 @@
 class DriveMode
 {
 private:
+	int currentDriveMode;
 public:
 	void botDrivesOverLand();
 	void botDrivesOverWater();
+	int getDriveMode();
 };
 
 #include"DriveMode.hpp"
 void DriveMode::botDrivesOverWater()
 {
-	int temp = 1;
+	currentDriveMode = 0;
 }
 void DriveMode::botDrivesOverLand()
 {
-	int pmet = 1;
+	currentDriveMode = 1;
+}
+int DriveMode::getDriveMode()
+{
+	return currentDriveMode;
 }

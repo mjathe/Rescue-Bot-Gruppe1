@@ -1,4 +1,5 @@
 #pragma once
+#include <Windows.h>
 class MotorControl
 {
 #define enginePin1  3
@@ -13,11 +14,19 @@ class MotorControl
 public:
 	void acclerator(int direction);
 	void rotation(int angle);
-
+	MotorControl(DriveMode _drvMode);
+	MotorControl();
 private:
 	void engine(int engine1, int engine2);
+	DriveMode drvMode;
 };
-
+MotorControl::MotorControl()
+{
+}
+MotorControl::MotorControl(DriveMode _drvMode)
+{
+	drvMode = _drvMode;
+}
 	
 #include "MotorControl.hpp"
 void MotorControl::engine(int engine1, int engine2)		//Engine1 = right Engine2 = left
@@ -29,7 +38,10 @@ void MotorControl::engine(int engine1, int engine2)		//Engine1 = right Engine2 =
 	}
 	else if (engine1 == 0)
 	{
-		analogWrite(enginePin1, 255);
+
+			analogWrite(enginePin1, 255);
+		
+
 	}
 	else if (engine1 == 200)
 	{
@@ -67,17 +79,33 @@ void MotorControl::acclerator(int direction)
 	switch (direction)
 	{
 
-	case 0: engine(0, 0);
-		break;
+	case 0: 	if (drvMode.getDriveMode() == 0) //0 = water
+	{
+		engine(0, 0);
+	}
+		  else
+	{
+		engine(50, 50);
+		Sleep(100);
+	}
+		  break;
 	case 1: engine(100, 100);
 		break;
 	case 2: engine(200, 200);
 		break;
-	default: engine(0, 0);
+	default:
+		if (drvMode.getDriveMode() == 0) //0 = water
+		{
+			engine(0, 0);
+		}
+		else
+		{
+			engine(50, 50);
+			Sleep(100);
+		}
 		break;
 	}
 }
-
 void MotorControl::rotation(int angle)
 {
 	int absangle = abs(angle);
