@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "testground.cpp"
@@ -18,10 +19,18 @@ class SetOrientation{
 //----------
 class Move{
     public:
-        void movestraight(int direction, int speed);
+        void movestraight(int engine,int direction, int speed);
 };
-void Move::movestraight(int direction, int speed){
-    Test.move_straight();
+void Move::movestraight(int engine ,int direction, int speed){
+    if (speed == 0)
+    {
+
+    }
+    else if (speed == 255 && engine == 3)
+    {
+        Test.move_straight();
+    }
+
 };
 //----------
 class Sensor {

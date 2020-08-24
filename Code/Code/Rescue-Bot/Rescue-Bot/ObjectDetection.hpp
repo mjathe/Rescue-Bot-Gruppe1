@@ -12,19 +12,19 @@ private:
 
 
 public:
-	bool detectObject();
+	char* detectObject();
 };
 
-	bool ObjectDetection::detectObject()
+	char* ObjectDetection::detectObject()
 	{
 		SensorController senContr;
 
 		AudioNavigation audiNav;
 
 		cout << "\nObject Detection: ";
-		char objects[2];
+		char objects[2] = { '0','0' };
 		memcpy((char*)senContr.checkForObjects(), (char*)objects, 2);
- 		if (objects[0] == 1 || objects[1] == 1)
+ 		if (objects[0] == '1' || objects[1] == '1')
 		{
 			ObstacleDetection objRec;
 			switch (objRec.recognized())
@@ -38,12 +38,12 @@ public:
 				break;
 			}
 			cout << "\nobject recognition with positive result\n\n";
-			return true;
+			return objects;
 		}
 		else
 		{
 			cout << "\nobject recognition with negative result\n\n";
-			return false;
+			return objects;
 		}
 		
 	}

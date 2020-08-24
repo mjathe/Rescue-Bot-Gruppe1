@@ -4,6 +4,7 @@
 #include "MotorControl.hpp"
 #include <Windows.h>
 #include <conio.h>
+#include "Alignment.hpp"
 #include "Sensorcontroller.hpp"
 class MainControl
 {
@@ -12,6 +13,7 @@ private:
 	DriveMode drvMode;
 	//MotorControl moCo();
 	SensorController senContr;
+	Alignment ali;
 public:
 	void mainloop();
 
@@ -26,7 +28,7 @@ void MainControl::mainloop()
 	while (GetAsyncKeyState(0x60) == 0)
 	 {
 		Sleep(1000);
-		system("cls");
+		//system("cls");
 		cout << "checkWater";
 		if (senContr.checkWater() == 1)
 		{
@@ -36,9 +38,27 @@ void MainControl::mainloop()
 		{
 			drvMode.botDrivesOverLand();
 		}
-		if (objDec.detectObject() == true)
+		char object[2] = {'0','0'};
+		memcpy(objDec.detectObject(), object, 2);
+		if (object[0] == '1')
 		{
 			moCo.acclerator(0);
+			ali.adjustAlignment(270);
+			moCo.acclerator(1);
+			Sleep(1000);
+			moCo.acclerator(0);
+			ali.adjustAlignment(90);
+
+			
+		}
+		else if (object[0] == '1')
+		{
+			moCo.acclerator(0);
+			ali.adjustAlignment(90);
+			moCo.acclerator(1);
+			Sleep(1000);
+			moCo.acclerator(0);
+			ali.adjustAlignment(270);
 		}
 		else
 		{
