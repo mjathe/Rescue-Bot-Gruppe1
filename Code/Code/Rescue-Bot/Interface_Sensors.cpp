@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "testground.cpp"
@@ -5,6 +6,33 @@ using namespace std;
 char identify;
 int pos[3] ={28,1};
 Testground Test;
+
+//----------
+class SetOrientation{
+    public:
+        void setori(char r) {
+        ori = r;
+        Test.setorientation(r);
+      }
+        char ori;
+};
+//----------
+class Move{
+    public:
+        void movestraight(int engine,int direction, int speed);
+};
+void Move::movestraight(int engine ,int direction, int speed){
+    if (speed == 0)
+    {
+
+    }
+    else if (speed == 255 && engine == 3)
+    {
+        Test.move_straight();
+    }
+
+};
+//----------
 class Sensor {
     public:
         virtual int getSensor() = 0;
@@ -143,23 +171,23 @@ class Audio: public Sensorarray {
             }
         }
 };
+//-----------------
 /*
 int main()
 {
-    Audio Aud;
     Ultraa Ula;
     Ultrab Ulb;
     Wasser Was;
+    Audio Aud;
+    Move Mov;
+    SetOrientation SOR;
+    SOR.setori('E');
+    Mov.movestraight();
     Aud.setturm(2);
-    Test.setturn('L');
-    cout<<"\nLook: " << Test.currendlook();
     cout<<"\nTurmid: " << Aud.getSensorarray();
     cout<<"\nU1: " << Ula.getSensor();
     cout<<"\nU2: " << Ulb.getSensor();
     cout<<"\nW1: " << Was.getSensor();
-    cout<<"\nMove: " << Test.move_straight();
-    cout<<"\nMove: " << Test.move_turn();
-    Test.setturn('R');
-    cout<<"\nMove: " << Test.move_turn();
+    return 0;
 }
 */

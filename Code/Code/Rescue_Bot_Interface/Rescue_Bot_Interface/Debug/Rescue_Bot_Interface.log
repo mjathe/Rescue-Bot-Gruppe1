@@ -1,7 +1,7 @@
 ﻿  Rescue_Bot_Interface.cpp
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\Alignment.hpp(16,28): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\testground.cpp(79): warning C4715: "Testground::currendlook": Nicht alle Codepfade geben einen Wert zurück.
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\testground.cpp(118): warning C4715: "Testground::move_straight": Nicht alle Codepfade geben einen Wert zurück.
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\testground.cpp(210): warning C4715: "Testground::move_turn": Nicht alle Codepfade geben einen Wert zurück.
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\testground.cpp(83): warning C4715: "Testground::currendlook": Nicht alle Codepfade geben einen Wert zurück.
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.hpp(139): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": audioData" wird zurückgegeben
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\ObjectDetection.hpp(41): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": objects" wird zurückgegeben
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\ObjectDetection.hpp(46): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": objects" wird zurückgegeben
   Rescue_Bot_Interface.vcxproj -> C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe
