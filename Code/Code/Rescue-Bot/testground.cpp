@@ -30,19 +30,19 @@ char map[30][30] = {
         {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','R','R'},
         {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','R','R'},
         {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','R','R'},
-        {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','R','R'},
-        {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','G','R'},
-        {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','G','R'},
-        {'R','R','R','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','G','R'},
-        {'R','R','R','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','G','G','G','G','G','G','G','G','G','R'},
-        {'R','R','R','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','G','G','G','G','G','G','G','G','G','R'},
-        {'R','G','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','W','W','G','G','G','G','G','G','G','G','R'},
-        {'R','G','G','G','G','G','G','G','G','G','G','G','W','W','O','W','W','W','W','W','W','G','G','G','G','G','G','G','G','R'},
-        {'R','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','W','W','W','W','G','G','G','G','G','G','G','R'},
-        {'R','G','G','G','G','R','R','R','R','R','R','W','W','W','W','W','W','W','W','W','W','W','G','G','R','G','G','G','G','R'},
-        {'R','G','G','G','G','R','R','R','R','R','R','W','W','W','W','W','W','W','W','W','W','W','R','R','R','R','G','G','R','R'},
-        {'R','G','G','G','G','R','R','R','R','R','R','G','W','W','O','W','W','W','W','W','W','R','R','R','R','R','R','G','R','R'},
-        {'R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R'},
+        {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','R','R'}, //18
+        {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','G','R'}, //19
+        {'R','G','G','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','G','R'}, //20
+        {'R','R','R','G','G','G','G','G','G','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','G','G','G','G','R'}, //21
+        {'R','R','R','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','G','G','G','G','G','G','G','G','G','R'}, //22
+        {'R','R','R','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','G','G','G','G','G','G','G','G','G','R'}, //23
+        {'R','G','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','W','W','G','G','G','G','G','G','G','G','R'}, //24
+        {'R','G','G','G','G','G','G','G','G','G','G','G','W','W','O','W','W','W','W','W','W','G','G','G','G','G','G','G','G','R'}, //25
+        {'R','G','G','G','G','G','G','G','G','G','G','W','W','W','W','W','W','W','W','W','W','W','G','G','G','G','G','G','G','R'}, //26
+        {'R','G','G','G','G','R','R','R','R','R','R','W','W','W','W','W','W','W','W','W','W','W','G','G','R','G','G','G','G','R'}, //27
+        {'R','G','G','G','G','R','R','R','R','R','R','W','W','W','W','W','W','W','W','W','W','W','R','R','R','R','G','G','R','R'}, //28
+        {'R','G','G','G','G','R','R','R','R','R','R','G','W','W','O','W','W','W','W','W','W','R','R','R','R','R','R','G','R','R'}, //29
+        {'R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R'}, //30
 };
 
 
@@ -68,26 +68,26 @@ int* Testground::location(){
 char Testground::currendlook(){
         switch(orientation){
         case 'N':
-        return map[position[0]][position[1]];
+        return map[(position[0]+1)][position[1]];
         break;
         case 'S':
-        return map[position[0]][position[1]];
+        return map[(position[0]-1)][position[1]];
         break;
         case 'E':
-        return map[position[0]][position[1]];
+        return map[position[0]][(position[1]+1)];
         break;
         case 'W':
-        return map[position[0]][position[1]];
+        return map[position[0]][(position[1]-1)];
         break;
     }
-}      
+}
 void Testground::move_straight(){
         switch(orientation){
         case 'N':
         if (map[position[0]-1][position[1]] != 'R'){
         position[0] = position[0]-1;
         cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
-        } 
+        }
         else{
             cout << "Kollision" << "\n";
         }
@@ -96,7 +96,7 @@ void Testground::move_straight(){
         if (map[position[0]+1][position[1]] != 'R'){
         position[0] = position[0]+1;
         cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
-        } 
+        }
         else{
             cout << "Kollision" << "\n";
         }
@@ -105,7 +105,7 @@ void Testground::move_straight(){
         if (map[position[0]][position[1]+1] != 'R'){
         position[1] = position[1]+1;
         cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
-        } 
+        }
         else{
             cout << "Kollision" << "\n";
         }
@@ -114,7 +114,7 @@ void Testground::move_straight(){
         if (map[position[0]][position[1]-1] != 'R'){
         position[1] = position[1]-1;
         cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
-        } 
+        }
         else{
             cout << "Kollision" << "\n";
         }

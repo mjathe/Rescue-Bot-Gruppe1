@@ -21,6 +21,8 @@ void Alignment::adjustAlignment(int alignmentIsNeed)
 {
 	cout << "Alignment Start" << endl; 
 	MotorControl engineCont;
-	engineCont.rotation(differenceAlignment(alignmentIsNeed),alignmentIsNeed);
+
+
+		engineCont.rotation(differenceAlignment(alignmentIsNeed), alignmentIsNeed);
 	cout << "Alignment finished" << endl;
 }
