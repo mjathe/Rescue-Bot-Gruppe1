@@ -10,7 +10,6 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include<string>
 
 using namespace std;
-char orientation = 'E';
 int position[2] = {28,1};
 char turn;
 char map[30][30] = {
@@ -46,112 +45,84 @@ char map[30][30] = {
         {'R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R','R'},
 };
 
+
 class Testground {
     public:
-        char move_north();
-        char move_south();
-        char move_east();
-        char move_west();
-        char move_turn();
-        char move_straight();
+        //void move_turn();
+        void move_straight();
         int* location();
         char currendlook();
         void setturn(char u) {
         turn = u;
         }
-        char turn;
+        void setorientation(char o) {
+        orientation = o;
+      }
+        char orientation;
 };
+
+int* Testground::location(){
+    return position;
+}
+
 char Testground::currendlook(){
         switch(orientation){
         case 'N':
-        return map[position[0]-1][position[1]];
+        return map[position[0]][position[1]];
         break;
         case 'S':
-        return map[position[0]+1][position[1]];
+        return map[position[0]][position[1]];
         break;
         case 'E':
-        return map[position[0]][position[1]+1];
+        return map[position[0]][position[1]];
         break;
         case 'W':
-        return map[position[0]][position[1]-1];
+        return map[position[0]][position[1]];
         break;
     }
 }      
-char Testground::move_straight(){
+void Testground::move_straight(){
         switch(orientation){
         case 'N':
         if (map[position[0]-1][position[1]] != 'R'){
         position[0] = position[0]-1;
-        return map[position[0]-1][position[1]];
+        cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
         } 
         else{
-            return '!';
+            cout << "Kollision" << "\n";
         }
         break;
         case 'S':
         if (map[position[0]+1][position[1]] != 'R'){
         position[0] = position[0]+1;
-        return map[position[0]+1][position[1]];
+        cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
         } 
         else{
-            return '!';
+            cout << "Kollision" << "\n";
         }
         break;
         case 'E':
         if (map[position[0]][position[1]+1] != 'R'){
         position[1] = position[1]+1;
-        return map[position[0]][position[1]+1];
+        cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
         } 
         else{
-            return '!';
+            cout << "Kollision" << "\n";
         }
         break;
         case 'W':
         if (map[position[0]][position[1]-1] != 'R'){
         position[1] = position[1]-1;
-        return map[position[0]][position[1]-1];
+        cout << "Position des Roboters: " << position[0] << ", " << position[1] << "\n";
         } 
         else{
-            return '!';
+            cout << "Kollision" << "\n";
         }
+        default:
+        cout << "No orientation" << "\n";
         }
-}   
-char Testground::move_north(){
-    if (map[position[0]-1][position[1]] != 'R'){
-        position[0] = position[0]-1;
-        return map[position[0]-1][position[1]];
-    } 
-    else{
-        return '!';
-    }
 }
-char Testground::move_south(){
-    if (map[position[0]+1][position[1]] != 'R'){
-        position[0] = position[0]+1;
-        return map[position[0]+1][position[1]];
-    } 
-    else{
-        return '!';
-    }
-}
-char Testground::move_east(){
-    if (map[position[0]][position[1]+1] != 'R'){
-        position[1] = position[1]+1;
-        return map[position[0]][position[1]+1];
-    } 
-    else{
-        return '!';
-    }
-}
-char Testground::move_west(){
-    if (map[position[0]][position[1]-1] != 'R'){
-        position[1] = position[1]-1;
-        return map[position[0]][position[1]-1];
-    } 
-    else{
-        return '!';
-    }
-}
+/*
 char Testground::move_turn(){
     switch(orientation){
         case 'N':
@@ -208,9 +179,8 @@ char Testground::move_turn(){
         break;
     }
 }
-int* Testground::location(){
-    return position;
-}
+*/
+
 /*int main()
 {
     Testground Test;
