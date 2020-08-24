@@ -5,7 +5,7 @@ C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-B
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\MainControl.hpp(49,44): warning C4244: "Argument": Konvertierung von "float" in "int", möglicher Datenverlust
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\MainControl.hpp(59,44): warning C4244: "Argument": Konvertierung von "float" in "int", möglicher Datenverlust
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\testground.cpp(83): warning C4715: "Testground::currendlook": Nicht alle Codepfade geben einen Wert zurück.
-C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.hpp(162): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": temp" wird zurückgegeben
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.hpp(138): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": audioData" wird zurückgegeben
+C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Rescue-Bot\SensorController.hpp(162): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts ": temp" wird zurückgegeben
 C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue-Bot\Interface_Sensors.cpp(66): warning C4715: "Compass::getCompass": Nicht alle Codepfade geben einen Wert zurück.
   Rescue_Bot_Interface.vcxproj -> C:\Users\bened\Documents\GitHub\Rescue-Bot-Gruppe1\Code\Code\Rescue_Bot_Interface\Debug\Rescue_Bot_Interface.exe

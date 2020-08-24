@@ -15,7 +15,6 @@ int Alignment::differenceAlignment(int alignmentToAdjust)
 	SensorController  sensCont;
 	int currentalignmentOnMap = sensCont.compass();
 	int difference = alignmentToAdjust - currentalignmentOnMap;
-	cout << alignmentToAdjust;
 	return difference;
 }
 void Alignment::adjustAlignment(int alignmentIsNeed)
