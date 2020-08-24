@@ -18,9 +18,9 @@ class SetOrientation{
 //----------
 class Move{
     public:
-        void movestraight();
+        void movestraight(int direction, int speed);
 };
-void Move::movestraight(){
+void Move::movestraight(int direction, int speed){
     Test.move_straight();
 };
 //----------
