@@ -1,0 +1,19 @@
+AutoMode()
+{
+if(ObjectDetection() == true)
+{
+  engine.transmission(0)
+}
+  else
+  {
+    engine.transmission(1)
+  }
+}
+}
+AutoModeDrive()
+{
+  while(Operator != PressStop)
+  {
+  AutoMode()
+  }
+}

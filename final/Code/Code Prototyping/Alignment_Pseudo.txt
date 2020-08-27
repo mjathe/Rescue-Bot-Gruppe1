@@ -1,0 +1,16 @@
+// nord = 0°
+// east = 90°
+// south = 180°
+// west = 270°
+// Kompass notation
+
+public int differencealignment(alignmenttoadjust)
+{
+int currentalignmentOnMap = sensorCheck_Pseudo.Compass()
+int difference = needalign - currentalignmentOnMap
+return difference
+}
+adjustalignment(alignmentisneed)
+{
+engine.rotation(differencealignment(alignmentisneed))
+}
