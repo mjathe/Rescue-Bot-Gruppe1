@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rescue-Bot", "Rescue-Bot\Rescue-Bot.vcxitems", "{C1018FE1-145E-4D41-9B92-8DC29E57ECF1}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B1D3102-6879-4261-AE7B-ABFE285B37DE}
+	EndGlobalSection
+EndGlobal

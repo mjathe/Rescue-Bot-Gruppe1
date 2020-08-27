@@ -1,0 +1,61 @@
+private void engine( Motor1R, Motor2L ) // ansteuerung der motoren
+{
+if (Motor1R == 100%)
+  {
+    digitalWrite(100%)
+  }else if (Motor1R == 0% )
+    {
+      digitalWrite(0%)
+    } else if ( Motor1R = -100%)
+      {
+        digitalWrite(-100%)
+      }
+If (Motor2L == 100% )
+  {
+    digitalWrite(100%)
+  }else if (Motor2L == 0% )
+    {
+      digitalWrite(0%)
+    } else if ( Motor2L = -100%)
+      {
+        digitalWrite(-100%)
+      }
+}
+puplic acclerator(direction)    // vor zurück stopp
+{
+  if(direction == 0)
+  {
+  engine(Motor1R= 0%, Motor2L = 0% ) Stop
+  }
+  else if(direction == 1)
+  {
+    engine(Motor1R = 100%, Motor2L = 100%) // forward
+  }
+  else if (direction == 2)
+  {
+    engine(Motor1R = -100%, Motor2L -100%) //reverse
+  }
+}
+
+public rotation(angle) // umsetzung der Zeitbasierten drehung
+{
+if(angle > 180) // turn left
+{
+  for(i = (360° - angle) / degreePerSec; i > 0; i--)
+      {
+      engine(Motor1R=0%,Motor2L=100%)
+      sleep(1000)
+      }
+      engine(Motor1R = 0%, Motor2L = 0%)
+    }
+    else if(angle <= 180) // turn left
+    {
+      for(i = angle) / degreePerSec; i > 0; i--)
+          {
+          engine(Motor1R=100%,Motor2L=0%)
+          sleep(1000)
+          }
+          engine(Motor1R = 0%, Motor2L = 0%)
+        }
+  }
+}

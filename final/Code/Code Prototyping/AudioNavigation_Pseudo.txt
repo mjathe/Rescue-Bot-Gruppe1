@@ -1,0 +1,30 @@
+ bool [4] audioData // data from audio sensors
+
+AudioNavigation() //aurichtung auf AudioStation in bezug zum Nordpol
+{
+  audioData = readAudioSensors() //lese Audio sensoren
+    if(audioData == {1,0,0,0})
+    {
+      Alignment.adjustalignment(0°) //nach turm 1 liegt in richtung norden
+    }
+    else if(audioData == {1,0,0,1})   
+    {
+    Alignment.adjustalignment(90°)  // to East da richtung 4 die kürzere strecke ist ... alignment nach osten
+    }
+    else if(audioData == {1,1,0,0})
+    {
+    Alignment.adjustalignment(90°) // to East vom turm 1 aus liegt der turm richtung osten
+    }
+    else if(audioData == {0,1,0,0})
+    {
+    Alignment.adjustalignment(90°) falls (warum auch immer) das fahrzeug eine andere ausrichtung auf der gerade zu punkt 2 unterläuft
+    }
+    elseif(audioData == {0,1,1,0})
+    {
+    Alignment.adjustalignment(180°) //to South ausrichtung auf turm 4 (hierzwischen muss irgendwo der Verletze liegen)
+    }
+    else if(audioData == {0,0,1,0})
+    {
+    Alignment.adjustalignment(180°)
+    }
+}

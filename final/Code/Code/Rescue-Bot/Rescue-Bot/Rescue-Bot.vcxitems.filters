@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Robot_Test1.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)test.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Alignment.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioNavigation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MainControl.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DriveMode.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)MotorControl.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)SensorController.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)test.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AudioNavigation.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Alignment.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DriveMode.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MainControl.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MotorControl.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ObjectDetection.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ObstacleDetection.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Sensorcontroller.hpp" />
+  </ItemGroup>
+</Project>

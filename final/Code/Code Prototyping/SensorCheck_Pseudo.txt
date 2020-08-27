@@ -1,0 +1,67 @@
+bool[] audioSignals[9]
+bool[] audiData[4]
+bool water
+bool[] obstacle[4]
+
+public bool[] readAudioSensors()
+{
+//AudioOne{1,1,1,0,0,0,0,0,1} northwest
+//AudioTwo{1,1,1,0,0,0,0,1,0}northeast
+//AudioThree{1,1,1,0,0,0,0,1,1} northeast
+//Audiofour{1,1,1,0,0,0,1,0,0} Southeast shortway
+    for ( i=0; i< 9; i++)
+    {
+      audioSignals[i] = readSensor(microfone)
+      sleep(100) // zeit zwischen den bits
+    }
+    for(i= 0; i<3;i++)
+    {
+      if(audioSignals.subArray[0,5] == new {1,1,1,0,0,0})
+        {
+         switch(audioSignals.subArray[6,8])
+         case {001}: audioData[0]  = true
+         case {010}: audiData[1] = true
+         case {011}: audioData[2]  = true
+         case {100}: audiData[3] = true
+        }
+
+        else
+        {
+         exeption"fehlerhaftes Signal"
+        }
+        return audiData
+      }
+}
+int compass()
+{
+    int orientationToNorth = readSensor(compass)
+    return orientationToNorth
+}
+
+
+checkWater()
+{
+  water = SensorRead(water)
+}
+
+
+
+
+checkUltrasonic()
+{
+
+return {SensorRead(ultrasonicVL),SensorRead(ultrasonicVR),SensorRead(ultrasonicHL),SensorRead(ultrasonicHR)}
+}
+checkObstacle()
+{
+//vornelinks = 0
+//vorneRechts = 1
+//hintenRechts = 2
+//hintenLinks = 3
+obstacle[0]= SensorRead(vornelinks)
+obstacle[1]= SensorRead(vorneRechts)
+obstacle[2]= SensorRead(hintenRechts)
+obstacle[3]= SensorRead(hintenLinks)
+
+
+}

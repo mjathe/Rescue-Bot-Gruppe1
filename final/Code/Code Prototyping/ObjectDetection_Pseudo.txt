@@ -1,0 +1,39 @@
+ObjectDetection()
+{
+if(SensorCheck_Pseudo.checkWater() == true)
+{
+  DriveMode.startWaterMode()
+}else if( SensorCheck_Pseudo.checkWater() == false)
+{
+  DriveMode.startLandMode()
+}
+  if( SensorCheck_Pseudo.checkUltrasonic() == {0,0,0,0})
+  {
+    return false
+  }
+  else //ultrasonic==true
+  {
+  //objectRecognition
+   if(SensorCheck_Pseudo.checkInfrared() == false )
+   {  // no person detected
+      if(cameraMeasurement(branches) == true)
+      {
+        startChainsaw()
+        return false //
+      }
+      else
+      {
+        avoidObject()
+        return false
+      }
+   }
+   else //infrared==true
+   {
+      if (driveToPeson.driveToPerson() == finished )
+      {
+        rescue()
+      }
+   }
+  }
+
+}
