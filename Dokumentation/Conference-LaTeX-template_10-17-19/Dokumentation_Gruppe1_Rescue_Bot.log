@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.3.30)  25 AUG 2020 13:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.3.30)  27 AUG 2020 07:32
 entering extended mode
 **./Dokumentation_Gruppe1_Rescue_Bot.tex
 (Dokumentation_Gruppe1_Rescue_Bot.tex
@@ -320,14 +320,61 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 
+LaTeX Warning: Citation `stat1' on page 0 undefined on input line 58.
+
+
+! LaTeX Error: File `Requirements' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 ...{\includegraphics[scale=0.3]{Requirements}
+                                                  }
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[0
+
+]
+
+LaTeX Warning: Command \" invalid in math mode on input line 95.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.95 ...z wird errechnet aus der $differenz =gewü
+                                                  nschtenAusrichtung - aktue...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ... \accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.95 ...z wird errechnet aus der $differenz =gewü
+                                                  nschtenAusrichtung - aktue...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no � in font cmex10!
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
+00.
+("C:\Users\bened\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1]
+
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.68 \end{thebibliography}
-                          
+l.123 \end{thebibliography}
+                           
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -342,26 +389,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[0
+[2] (Dokumentation_Gruppe1_Rescue_Bot.aux)
 
-] (Dokumentation_Gruppe1_Rescue_Bot.aux) ) 
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3829 strings out of 480932
- 56358 string characters out of 2899905
- 299574 words of memory out of 3000000
- 19669 multiletter control sequences out of 15000+200000
- 571284 words of font info for 98 fonts, out of 3000000 for 9000
+ 3894 strings out of 480932
+ 57163 string characters out of 2899905
+ 301574 words of memory out of 3000000
+ 19716 multiletter control sequences out of 15000+200000
+ 573759 words of font info for 105 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,8n,37p,258b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/bened/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/bened/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/bened/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/bened/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/bened/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Dokumentation_Gruppe1_Rescue_Bot.pdf (2 pages, 49597 bytes).
+ 30i,8n,37p,1334b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/bened/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+}<C:/Users/bened/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb><C:/Users/bened/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/Users/bened/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/bened/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/bened/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/bened/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/bened/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Dokumentation_Gruppe1_Rescue_Bot.pdf (4 pages, 94574 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
